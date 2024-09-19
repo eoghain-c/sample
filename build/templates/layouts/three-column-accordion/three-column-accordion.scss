@@ -1,0 +1,512 @@
+/*
+  Three Column Accordion
+*/
+
+@import '../../../common/sass/core';
+
+.three-column-accordion {
+	$layout: &;
+
+	&__wrapper {
+		max-width: 688px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@media screen and (min-width: 768px){
+			max-width: 1200px;
+		}
+		@media screen and (min-width: 1920px){
+			width: 1200px;
+		}
+	}
+
+	&.accordion--row-gap {
+		.accordion__inner {
+			border: none;
+			padding: 0 23px;
+
+			@media screen and (min-width: 768px) {
+				padding: 0 40px;
+			}
+
+			@media screen and (min-width: 1280px) {
+				padding: 0;
+				width: 1044px;
+			}
+		}
+
+		.accordion__heading {
+			padding: 0 23px;
+
+			@media screen and (min-width: 768px) {
+				padding: 0 40px;
+			}
+
+			@media screen and (min-width: 1280px) {
+				padding: 0 30px;
+			}
+		}
+
+		.accordion__option {
+			border: 1px solid $color-grey;
+			margin-bottom: 10px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		.accordion__container-answer {
+			padding: 18px;
+
+			@media screen and (min-width: 768px) {
+				padding: 15px 10px 16px;
+			}
+
+			@media screen and (min-width: 1280px) {
+				padding: 15px 32px;
+			}
+		}
+
+		.three-column-accordion__wrapper {
+			@media screen and (min-width: 768px){
+				max-width: 1044px;
+			}
+			@media screen and (min-width: 1920px){
+				width: 1044px;
+			}
+		}
+	}
+
+
+	&.accordion--no-gap {
+
+		.accordion__accordion-wrapper {
+			padding: 0 24px;
+
+			@media screen and (min-width: 1920px) {
+				padding: 0;
+			}
+		}
+
+		.accordion__heading {
+			.title {
+				@media screen and (min-width: 1280px) {
+					margin-bottom: 8px;
+				}
+			}
+		}
+
+		.accordion__title {
+			padding: 26px 66px 18px 19px;
+
+			@media screen and (min-width: 768px) {
+				padding: 29px 96px 26px 32px;
+			}
+
+			@media screen and (min-width: 1920px) {
+				padding: 36px 96px 31px 32px;
+			}
+
+			.v-icon__svg--arrow-splide {
+				top: 28px;
+
+				@media screen and (min-width: 768px) {
+					right: 54px;
+				}
+
+				@media screen and (min-width: 1280px) {
+					right: 24px;
+					top: 25px;
+				}
+			}
+
+			.accordion__col {
+				&:first-of-type {
+					.accordion__col-text {
+						letter-spacing: 0;
+
+						@media screen and (min-width: 768px) {
+							letter-spacing: 1px;
+						}
+
+						@media screen and (min-width: 1920px) {
+							letter-spacing: -0.38px;
+						}
+					}
+				}
+			}
+		}
+
+		.accordion__container-content {
+			padding: 6px 18px 16px;
+
+			@media screen and (min-width: 768px) {
+				padding: 0 32px 17px;
+			}
+
+			@media screen and (min-width: 1920px) {
+				padding: 0 32px 48px;
+			}
+		}
+
+		.accordion__col {
+			align-items: flex-start;
+		}
+	}
+
+	.accordion {
+		&__container-content {
+			padding: 0;
+		}
+
+		&__heading {
+			padding-right: 23px;
+			padding-left: 23px;
+
+			@media screen and (min-width: 1280px) {
+				padding-right: 30px;
+				padding-left: 30px;
+			}
+
+			&--left {
+				justify-content: flex-start;
+			}
+
+			&--right {
+				justify-content: flex-end;
+			}
+
+			&--center {
+				justify-content: center;
+			}
+
+			.title {
+				font-size: 28px;
+				letter-spacing: -0.68px;
+				line-height: 100%;
+
+				@media screen and (min-width: 768px) {
+					letter-spacing: .38px;
+					margin-bottom: 20px;
+				}
+
+				@media screen and (min-width: 1280px) {
+					font-size: 48px;
+					line-height: 50px;
+					margin-bottom: 25px;
+				}
+
+				.v-icon__svg--arrow-splide {
+					height: 10.126px;
+				}
+			}
+		}
+
+		&__inner {
+			@media screen and (min-width: 1920px) {
+				width: 1200px;
+			}
+		}
+
+		&__accordion-wrapper {
+			margin-bottom: 23px;
+
+			@media screen and (min-width: 1280px) {
+				margin-bottom: 51px;
+			}
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		&__col {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		&__container-answer {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			column-gap: 6%;
+			padding: 14px 0;
+
+			@media screen and (min-width: 768px) {
+				gap: 37px;
+				padding: 15px 0 16px 10px;
+
+			}
+
+			@media screen and (min-width: 1280px) {
+				gap: 3.5%;
+				padding: 15px 32px;
+			}
+
+			&:nth-of-type(odd) {
+				border-top: 1px solid $color-grey;
+				border-bottom: 1px solid $color-grey;
+				background: $color-grey-light;
+			}
+
+			.accordion__col {
+				&-icon {
+					.v-icon__svg {
+
+						@media screen and (min-width: 768px) {
+							margin-top: -5px;
+						}
+
+						@media screen and (min-width: 1280px) {
+							margin-top: 2px;
+							width: 26px;
+						}
+					}
+				}
+
+				&:first-of-type {
+					flex-basis: 100%;
+					margin-bottom: 5px;
+
+					@media screen and (min-width: 768px) {
+						flex-basis: 230px;
+						margin-bottom: 0;
+					}
+
+					@media screen and (min-width: 1280px) {
+						flex-basis: 30.75%;
+					}
+
+					.accordion__col-text {
+						@include nexa;
+						color: $color-green;
+						font-size: 11px;
+						line-height: 22px;
+						letter-spacing: 0.22px;
+
+						@media screen and (min-width: 768px) {
+							font-size: 12px;
+							line-height: 24px;
+							letter-spacing: 0.24px;
+						}
+
+						@media screen and (min-width: 1280px) {
+							font-size: 16px;
+							line-height: 32px;
+							letter-spacing: 0.32px;
+						}
+					}
+				}
+
+				&:nth-of-type(3n - 1) {
+					flex-basis: 47%;
+
+					@media screen and (min-width: 768px) {
+						flex-basis: 121px;
+					}
+
+					@media screen and (min-width: 1280px) {
+						flex-basis: 16.75%;
+					}
+				}
+
+				&:nth-of-type(3n) {
+					flex-basis: 47%;
+
+					@media screen and (min-width: 768px) {
+						flex-basis: 188px;
+					}
+
+					@media screen and (min-width: 1280px) {
+						flex-basis: 45.5%;
+					}
+
+					.accordion__col-text {
+
+						@media screen and (min-width: 1920px) {
+							margin-right: 206px;
+						}
+					}
+				}
+
+				&:nth-of-type(3n - 1),
+				&:nth-of-type(3n) {
+					.accordion__col-text {
+						@include nexa;
+						color: $color-black;
+						font-size: 11px;
+						line-height: 22px;
+						letter-spacing: 0.22px;
+
+						@media screen and (min-width: 768px) {
+							font-size: 12px;
+							line-height: 24px;
+							letter-spacing: 0.24px;
+						}
+
+						@media screen and (min-width: 1280px) {
+							font-size: 16px;
+							line-height: 32px;
+							letter-spacing: 0.32px;
+						}
+					}
+				}
+			}
+		}
+
+		&__title {
+			padding: 13px 66px 14px 19px;
+
+			@media screen and (min-width: 768px) {
+				padding: 26px 54px 27px 31px;
+				flex-direction: row;
+			}
+
+			@media screen and (min-width: 1280px) {
+				padding: 22px 74px 21px 31px;
+			}
+
+			&-wrapper {
+				display: flex;
+				align-items: flex-start;
+				flex-direction: column;
+
+				@media screen and (min-width: 768px) {
+					flex-direction: row;
+					align-items: center;
+					gap: 33px
+				}
+
+				@media screen and (min-width: 1280px) {
+					gap: 36px
+				}
+			}
+
+			.v-icon__svg {
+				top: 17px;
+
+				@media screen and (min-width: 768px) {
+					top: 28px;
+					right: 11px;
+				}
+
+				@media screen and (min-width: 1280px) {
+					top: 25px;
+					right: 48px;
+				}
+			}
+
+			.accordion__col {
+				&:first-of-type {
+					@media screen and (min-width: 768px) {
+						flex-basis: 214px;
+					}
+
+					@media screen and (min-width: 1280px) {
+						flex-basis: 35.15%;
+					}
+
+					.accordion__col-text {
+						@include bodoni-bold;
+						font-size: 21px;
+						color: $color-green;
+						letter-spacing: -.78px;
+						margin-bottom: 4px;
+
+						@media screen and (min-width: 768px) {
+							letter-spacing: -.32px;
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				&:nth-of-type(3n - 1) {
+					@media screen and (min-width: 768px) {
+						flex-basis: 78px;
+					}
+
+					@media screen and (min-width: 1280px) {
+						flex-basis: 19.2%;
+					}
+				}
+
+				&:nth-of-type(3n) {
+					@media screen and (min-width: 768px) {
+						flex-basis: 240px;
+					}
+
+					@media screen and (min-width: 1280px) {
+						flex-basis: 34.4%;
+					}
+				}
+
+				&:nth-of-type(3n),
+				&:nth-of-type(3n - 1) {
+					.accordion__col-text {
+						font-size: 11px;
+						line-height: 22px;
+						letter-spacing: 0.22px;
+
+						@media screen and (min-width: 768px) {
+							font-size: 12px;
+							line-height: 24px;
+							letter-spacing: 0.24px;
+						}
+
+						@media screen and (min-width: 1280px) {
+							font-size: 16px;
+							line-height: 32px;
+							letter-spacing: 0.32px;
+						}
+					}
+				}
+			}
+
+			.accordion__col {
+				gap: 6px;
+
+				@media screen and (min-width: 768px) {
+					gap: 0;
+					justify-content: space-between;
+				}
+
+				@media screen and (min-width: 768px) {
+					justify-content: flex-start;
+					gap: 10px;
+				}
+			}
+
+			.accordion__col-text {
+				@include nexa;
+				font-size: 16px;
+				letter-spacing: 0.32px;
+				color: $color-black;
+				line-height: 100%;
+
+				@media screen and (min-width: 768px) {
+					line-height: 24px;
+				}
+			}
+		}
+
+		&__col-icon {
+			.v-icon__svg {
+				color: $color-green;
+				height: 16px;
+				width: 16px;
+
+				@media screen and (min-width: 768px) {
+					height: 20px;
+					width: 20px;
+				}
+
+				@media screen and (min-width: 1280px) {
+					height: 23px;
+					width: 30px;
+				}
+			}
+		}
+	}
+}

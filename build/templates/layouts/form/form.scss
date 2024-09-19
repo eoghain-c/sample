@@ -1,0 +1,9 @@
+@import '../../../common/sass/core';
+
+/* === FORM === */
+// Currently not enqueued. Not required for styling.
+.form { padding: 0 24px;
+	@media screen and (min-width:768px) { padding: 0 40px; }
+	@media screen and (min-width:1920px) { padding: 0 64px; }
+	&__inner {  }
+}

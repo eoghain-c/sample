@@ -1,0 +1,78 @@
+/**
+	Global variables
+*/
+
+
+/* Site Max Width. Used in 03-base/_template.scss
+   -------------------------------------------------------------------------- */
+$site-max-width: 2100px;
+
+
+/* Location of compiled icons in theme.
+   Used in project/build/common/sass/04-components/_icons.scss
+   -------------------------------------------------------------------------- */
+$icons-dir: "/content/themes/base/assets/img/icons";
+
+
+/* Section Spacer Margin. Used in 04-components/_layout-settings.scss
+   -------------------------------------------------------------------------- */
+$margin-0: 56px;
+$margin-1280: 64px;
+$margin-1920: 80px;
+
+
+/* Colors
+   Suffix color variables with a 3 digit number.  Generally try to progress from
+   lightest/dullest to darkest/most vibrant.
+   -------------------------------------------------------------------------- */
+// Convert bootstrap defaults to non-american spelling of grey
+$grey-100: $gray-100;
+$grey-200: $gray-200;
+$grey-300: $gray-300;
+$grey-400: $gray-400;
+$grey-500: $gray-500;
+$grey-600: $gray-600;
+$grey-700: $gray-700;
+$grey-800: $gray-800;
+$grey-900: $gray-900;
+
+$color-default: #231F20; // Generally the main text color
+//$color-primary: $blue-300;
+//$color-secondary: $blue-500;
+//$color-accent: $yellow;
+
+/*******************************************
+* Color Variables
+********************************************/
+$color-black: #231F20;
+$color-green: #004438;
+$color-green-light: #346A5C;
+$color-green-medium: #325643;
+$color-green-light: #E9F3F2;
+$color-grey: #E0E0E0;
+$color-grey-dark: #585858;
+$color-grey-light: #FBFAF9;
+$color-grey-medium: #767676;
+$color-blue-light: #BEE1E2;
+$color-blue: #A6C8E9;
+$color-blue-dark: #22242E;
+$color-navy: #262237;
+$color-yellow: #C7B200;
+$color-gold: #84724E;
+$color-off-white: #FAFAFA;
+$color-pink-light: #ECBAC9;
+$color-pink: #EA8088;
+$color-pink-hot: #BF1C7F;
+$color-peach: #EC8572;
+$color-lilac: #C0A0D4;
+$color-red: #B01630;
+$color-white: #FFFFFF;
+
+
+/* Filter Colors
+   -------------------------------------------------------------------------- */
+$filter-grey-600: invert(44%) sepia(0%) saturate(0%) hue-rotate(164deg) brightness(88%) contrast(90%);
+$filter-black: brightness(0%) saturate(100%);
+$filter-white: invert(86%) sepia(100%) saturate(2%) hue-rotate(189deg) brightness(104%) contrast(101%);
+// $color-green: #004438
+$filter-green: invert(20%) sepia(15%) saturate(3251%) hue-rotate(126deg) brightness(97%) contrast(102%);

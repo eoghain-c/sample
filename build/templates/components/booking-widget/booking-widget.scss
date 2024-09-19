@@ -1,0 +1,581 @@
+@import '../../../common/sass/core';
+
+/* Component: Booking Widget
+   -------------------------------------------------------------------------- */
+
+.booking-widget {
+  $layout: &;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+	max-width: 422px;
+	padding: 24px 16px;
+	background: #fff;
+
+  .submission-error {
+	color: $color-white;
+  }
+	
+	&__close {
+		@include button-reset;
+		@include nexa-bold();
+		align-items: center;
+		background: rgba(#212722, 0.8);
+		border-top-left-radius: 1px;
+		border-top-right-radius: 1px;
+		display: flex;
+		font-size: 16px;
+		letter-spacing: 0.1em;
+		line-height: 18px;
+		pointer-events: auto;
+		text-transform: uppercase;
+		transition: $transition-base;
+		
+		position: absolute;
+		right: 0;
+		bottom: calc(100% - 1px);
+		padding: 8px 12px;
+		border: 0;
+		background: #fff;
+		color: #231F20;
+		
+		
+		.v-icon__svg {
+			color: #231F20;
+			display: block;
+			height: 12px;
+			margin-right: 8px;
+			width: 12px;
+		}
+		
+		&:hover, &:focus {
+			color: rgba(#231F20, 0.65);
+			.v-icon__svg {
+				color: rgba(#231F20, 0.65);
+			}
+		}
+	}
+  &__inner {
+	  transition: $transition-base;
+	  position: relative;
+
+	@media screen and (min-width: 480px) {
+	}
+	&:hover, &:focus-within {
+	}
+  }
+
+  &__fields {
+	display: flex;
+	flex-direction: column;
+  }
+
+  &__select {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 12px;
+	padding-top: 0;
+	width: 100%;
+	  .v-icon__svg {
+		  color: #000;
+		  position: relative;
+		  top: -2px;
+		  width: 16px;
+		  height: 16px;
+		  min-width: 16px;
+		  transition: $transition-base;
+		  pointer-events: none;
+	  }
+  }
+
+  &__label {
+	  display: block;
+	  color: #585858;
+	  @include nexa-bold;
+	  text-align: left;
+	  font-size: 8px;
+	  line-height: 11px;
+	  letter-spacing: 0.8px;
+	  text-transform: uppercase;
+	  margin-bottom: 6px;
+	  @media screen and (min-width:1920px) {
+		  font-size: 11px;
+		  line-height: 14px;
+		  letter-spacing: 1.1px;
+		  margin-bottom: 2px;
+	  }
+  }
+
+  &__select-area,
+  &__input-area {
+	@include button-reset;
+	align-items: center;
+	border-bottom: 1px solid #D6D2C4;
+	display: flex;
+	justify-content: left;
+	padding: 4px 0 2px;
+	position: relative;
+	text-align: left;
+	width: 100%;
+
+	> .v-icon__svg {
+		color: #000;
+		position: relative;
+		top: -2px;
+		width: 16px;
+		height: 16px;
+		transition: $transition-base;
+		pointer-events: none;
+		margin-right: 16px;
+	}
+	.v-icon__svg--arrow-booking-widget {
+		width: 24px;
+	}
+
+	&:hover, &:focus {
+	}
+
+	&.active {
+	}
+  }
+
+  &__select-text {
+	  @include bodoni-bold;
+	  color: #231F20;
+	  font-size: 18px;
+	  @media screen and (min-width:1920px) {
+		  font-size: 21px;
+	  }
+  }
+
+  /* Calendar Dropdown */
+  .easepick-container {
+	display: block;
+	max-height: 0;
+	overflow: hidden;
+	transition: $transition-base;
+	visibility: hidden;
+	opacity: 0;
+	width: 100%;
+
+	&__inner {
+	  align-items: center;
+	  display: flex;
+	  justify-content: center;
+	  flex-direction: column;
+	  width: 100%;
+
+	  & > span:not(.easepick-wrapper) {
+		display: none;
+	  }
+	}
+
+	.easepick-wrapper {
+	  height: auto;
+		display: none;
+	}
+
+	&.show {
+	  display: flex;
+	  max-height: 500px;
+	  visibility: visible;
+	  opacity: 1;
+	}
+
+	&__bind {
+	  display: none;
+	}
+  }
+
+  &__guests {
+	display: block;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: $transition-base;
+	visibility: hidden;
+	width: 100%;
+
+	&-inner {
+	  background: $color-white;
+	  padding: 8px;
+		height: 100%;
+		@media screen and (min-width: 1920px) {
+			padding: 12px;
+		}
+		:last-child { margin-bottom: 0; }
+	}
+
+	&.show {
+	  max-height: 182px;
+	  opacity: 1;
+	  visibility: visible;
+	}
+  }
+
+  &__occupancy {
+	@include nexa();
+	align-items: center;
+	color: #363E3B;
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+	letter-spacing: 0.1em;
+	line-height: 18px;
+	text-transform: uppercase;
+	  margin-bottom: 12px;
+	  @media screen and (min-width: 1920px) {
+		  margin-bottom: 18px;
+	  }
+  }
+
+  &__numberpicker {
+	align-items: center;
+	display: flex;
+
+	&-value {
+	  margin: 0 12px;
+	  text-align: center;
+	  width: 12px;
+	}
+
+	&-btn {
+	  @include button-reset;
+	  border: 1px solid #BDBDBD;
+		width: 24px; height: 24px;
+	  border-radius: 50%;
+		position: relative;
+
+	  .v-icon__svg {
+		color: #BDBDBD;
+		position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  transform: translate(-50%, -50%);
+		height: 10px;
+		width: 10px;
+	  }
+	}
+  }
+
+  &__submit.link.link__btn {
+	  appearance: none;
+	  	width: 100%;
+	  	background: #004438;
+	  	border-radius: 1px;
+	  	color: #FFF;
+	  	padding: 16px 32px 17px;
+	  	@include nexa-bold();
+	  	font-size: 14px;
+	  	letter-spacing: 1.4px;
+	  	text-transform: uppercase;
+	  	border: 1px solid #004438;
+	  	@media screen and (min-width: 1920px) {
+			font-size: 16px;
+	  		letter-spacing: 1.6px;
+		}
+	  &:hover, &:focus, &:active { background: #fff; border: 1px solid #e0e0e0; color: #004438; }
+
+	&:after {
+	  display: none;
+	}
+  }
+
+  /* Booking Widget Variations
+  ---------------------------------------------------------------------- */
+
+  /* Booking Widget - Hero */
+  &.booking-widget--hero {
+	  width: 100%;
+	  max-width: 1136px;
+	  margin: 0;
+	display: none;
+	position: absolute;
+    z-index: 2;
+	  border-radius: 2px;
+	  padding: 22px 20px 24px;
+
+	@media screen and (min-width: 768px) { display: block;
+		width: calc(100% - 40px);
+	}
+	  @media screen and (min-width: 1280px) { display: block;
+		  padding: 22px 72px 24px;
+	  }
+
+
+	#{$layout}__inner {
+	  //border: 0;
+	  //padding: 0;
+	}
+
+	#{$layout}__form {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 20px 64px;
+		@media screen and (min-width: 1920px) {
+			flex-wrap: nowrap;
+		}
+	}
+
+	#{$layout}__fields {
+		align-items: center;
+		border-right: 0;
+		flex-direction: row;
+		width: 100%;
+		padding: 0 5px;
+		@media screen and (min-width: 1280px) { width: 70%; }
+		@media screen and (min-width: 1920px) { padding: 0; width: 100%; }
+	}
+
+	#{$layout}__select {
+	  margin: 0 64px 0 0;
+	  padding: 0;
+	  position: relative;
+	  width: unset;
+		border-bottom: 1px solid #BDBDBD;
+
+	  &:last-of-type {
+		margin-right: 0;
+	  }
+
+
+		&--dates,  &--guests { width: 100%; }
+	  	&--guests {
+			@media screen and (min-width: 1920px) { width: 72%; }
+		}
+
+	}
+
+	#{$layout}__select-area,
+	#{$layout}__input-area {
+	  border: 0;
+	}
+
+	#{$layout}__select-text {
+	  white-space: nowrap;
+
+	  &--separator {
+		margin: 0 15px 0 12px;
+	  }
+	}
+
+	.easepick-container {
+	  left: -16px;
+	  position: absolute;
+	  top: calc(100% + 12px);
+	  width: unset;
+	  z-index: 1;
+	}
+
+	#{$layout}__guests {
+	  height: auto;
+	  left: -25px;
+	  min-width: 308px;
+	  position: absolute;
+	  top: calc(100% + 12px);
+	  z-index: 1;
+		border-radius: 2px;
+		border: 1px solid #E0E0E0;
+	}
+
+	#{$layout}__submit {
+		@media screen and (min-width: 1280px) {
+			max-width: 202px;
+			padding: 17px 32px 18px;
+		}
+	}
+
+  }
+
+  /* Booking Widget - Sticky */
+  &.booking-widget--sticky {
+	  position: fixed;
+	  top: 0 !important; left: 0 !important;; right: 0 !important;; bottom: 0 !important;;
+	  width: 100%;
+	  height: 100%;
+	  max-width: unset;
+	  opacity: 0;
+	  transition: $transition-base;
+	  visibility: hidden;
+	  z-index: 12;
+	  pointer-events: none;
+	  background: rgba(0,0,0,.65);
+	  align-items: center;
+	  justify-content: center;
+	  display: flex;
+	  flex-direction: row;
+
+	&.active {
+	  opacity: 1;
+	  visibility: visible;
+	}
+
+	
+
+	#{$layout}__inner {
+	  pointer-events: auto;
+	  background: #fff;
+	  padding: 24px 16px;
+	}
+
+	#{$layout}__fields {
+	  max-height: calc(100vh - 172px);
+	  overflow-y: auto;
+
+	  @media screen and (min-width: 768px) {
+		max-height: calc(100vh - 180px);
+	  }
+	  @media screen and (min-width: 1280px) {
+		max-height: calc(100vh - 311px);
+	  }
+	  @media screen and (min-width: 1920px) {
+		max-height: calc(100vh - 324px);
+	  }
+	}
+
+	.easepick-container {
+	  .easepick-wrapper {
+		width: 100%; margin: -1px !important;
+
+		@media screen and (min-width: 480px) {
+		  width: auto;
+		}
+	  }
+	}
+
+	#{$layout}__submit.link.link__btn {
+		appearance: none;
+		width: 100%;
+		background: #004438;
+		border: 0;
+		border-radius: 1px;
+		color: #FFF;
+		padding: 16px 40px;
+		@include nexa-bold();
+		font-size: 14px;
+		letter-spacing: 1.4px;
+		text-transform: uppercase;
+		@media screen and (min-width: 1920px) {
+			font-size: 16px;
+			letter-spacing: 1.6px;
+	  	}
+
+	  &:after {
+		display: block;
+	  }
+	}
+  }
+}
+
+/* Booking Widget Position based on Hero Size */
+//.hero-large + .booking-widget {
+//  @media screen and (min-width: 1280px) {
+//	top: -275px;
+//  }
+//  @media screen and (min-width: 1920px) {
+//	top: -385px;
+//  }
+//}
+
+//.hero-medium + .booking-widget {
+//	@media screen and (min-width: 1280px) {
+//		top: -152px;
+//	}
+//	@media screen and (min-width: 1920px) {
+//		top: -152px;
+//	}
+//}
+
+/* Sticky position for Header */
+body.no-hero .header,
+// Sticky Header
+.header.header--sticky {
+  // Booking Widget Max Height & Position
+  .booking-widget.booking-widget--sticky {
+	@media screen and (min-width: 1280px) {
+	  //top: calc(100% - 14px); // 24px from book button
+	}
+	@media screen and (min-width: 1920px) {
+	  //top: calc(100% - 31px); // 32px from book button
+	}
+
+	.booking-widget__fields {
+	  max-height: calc(100vh - 156px);
+
+	  @media screen and (min-width: 768px) {
+		max-height: calc(100vh - 168px);
+	  }
+	  @media screen and (min-width: 1280px) {
+		max-height: calc(100vh - 263px); // 24px from bottom of screen
+	  }
+	  @media screen and (min-width: 1920px) {
+		max-height: calc(100vh - 294px); // 32px from bottom of screen
+	  }
+	}
+  }
+}
+
+/* Sticky Position for Header when logged in */
+body.admin-bar {
+  // Booking Widget Max Height & Position
+  .booking-widget.booking-widget--sticky {
+	.booking-widget__fields {
+	  max-height: calc(100vh - 218px);
+
+	  @media screen and (min-width: 768px) {
+		max-height: calc(100vh - 212px);
+	  }
+	  @media screen and (min-width: 1280px) {
+		max-height: calc(100vh - 343px); // 32px from bottom of screen
+	  }
+	  @media screen and (min-width: 1920px) {
+		max-height: calc(100vh - 356px); // 32px from bottom of screen
+	  }
+	}
+  }
+
+  body.no-hero .header,
+  // Sticky Header
+  .header.header--sticky {
+	// Booking Widget Max Height & Position
+	.booking-widget.booking-widget--sticky {
+	  .booking-widget__fields {
+		max-height: calc(100vh - 202px);
+
+		@media screen and (min-width: 768px) {
+		  max-height: calc(100vh - 200px);
+		}
+		@media screen and (min-width: 1280px) {
+		  max-height: calc(100vh - 295px); // 24px from bottom of screen
+		}
+		@media screen and (min-width: 1920px) {
+		  max-height: calc(100vh - 326px); // 32px from bottom of screen
+		}
+	  }
+	}
+  }
+}
+
+
+
+
+/* === HERO === */
+.hero-booking-btn { width: 100%; position: absolute; left: 50%; bottom: 62px; transform: translateX(-50%); border-radius: 1px; border: 0; @include nexa-bold(); font-size: 14px; font-weight: 800; letter-spacing: 1.4px; padding: 17px 18px 18px;
+	@media screen and (min-width: 768px) { display: none; }
+}
+.booking-widget--hero { position: absolute; left: 50%; bottom: 87px; transform: translateX(-50%);
+	@media screen and (min-width: 1920px) { bottom: 200px; }
+	
+	.booking-widget__close {
+		bottom: unset;
+		position: absolute;
+		right: -20px;
+		top: -47px;
+		
+		@include media-breakpoint-up(xxl){
+		  right: -72px;
+		}
+	}
+}

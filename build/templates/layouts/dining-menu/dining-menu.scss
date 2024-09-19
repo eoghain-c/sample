@@ -1,0 +1,253 @@
+@import '../../../common/sass/core';
+
+/* Dining Menu
+   -------------------------------------------------------------------------- */
+
+.dining-menu{
+  $layout: &;
+  .dining-menu__inner{
+	position:relative;
+	  max-width: 1509px;
+	  margin-left: auto;
+	  margin-right: auto;
+	#{$layout}__header{
+	  align-items: center;
+	  display:flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+		position: relative;
+		z-index: 2;
+		margin-bottom: -1px;
+		gap: 8px;
+		@media screen and (min-width:768px) {
+		padding:0;
+	  }
+	  .dm-title{
+		@include heading-1;
+		color: $color-green;
+		padding-bottom:5px;
+	  }
+	  .dm-tabs{
+		display: flex;
+		align-items: center;
+		overflow-y: scroll;
+		scrollbar-width: thin; // firefox styling
+		scrollbar-color: #000 rgba(0,0,0,0.0); // firefox styling
+		width:100%;
+	  margin-bottom: -1px;
+		@media screen and (min-width:768px) {
+		  justify-content: center;
+		}
+	  @media screen and (min-width: 1280px) {
+		  gap: 10px;
+	  }
+		&::-webkit-scrollbar {
+		  display: none;
+		}
+		.dm-tab{
+		  cursor: pointer;
+		  padding:20px 12px;
+		  white-space: nowrap;
+			@include nexa-bold;
+			font-size: 16px;
+			line-height: normal;
+			letter-spacing: 2.4px;
+			text-transform: uppercase;
+			color: $color-green;
+		  @media screen and (min-width:1024px) {
+			  padding: 22px 24px 20px;
+		  }
+		  &.active{
+			  border-radius: 2px 2px 0 0;
+			  border-top: 1px solid $color-grey;
+			  border-right: 1px solid $color-grey;
+			  border-left: 1px solid $color-grey;
+			  background: $color-white;
+		  }
+		}
+	  }
+	}
+	#{$layout}__menus{
+		border: 1px solid $color-grey;
+		background: $color-white;
+	  position:relative;
+	  #{$layout}__menu-container{
+		display:none;
+		&__inner{
+		  display:flex;
+		  flex-direction: column;
+		  flex-gap:48px;
+		  flex-wrap:wrap;
+		  gap:48px;
+			padding: 40px 11.8vw;
+		  row-gap:24px;
+		  @media screen and (min-width:1024px) {
+			flex-direction: row;
+		  }
+		  @media screen and (min-width:1280px) {
+			flex-gap:72px;
+			gap:72px;
+			row-gap: 32px;
+		  }
+		  @media screen and (min-width:1920px) {
+				flex-gap:0 80px;
+			  gap: 0 80px;
+			  row-gap: 0;
+			  padding: 86px 105px 20px;
+		  }
+		  .dm-menu-item{
+			  flex-basis:calc(50% - 24px);
+			  padding-bottom:56px;
+			  @media screen and (min-width:1280px) {
+				  flex-basis:calc(50% - 36px);
+			  }
+			  @media screen and (min-width:1920px) {
+				  flex-basis:calc(50% - 40px);
+			  }
+			&:not(:last-of-type){
+				padding-bottom: 60px;
+			}
+			.dm-submenu-title{
+				color: $color-green;
+				@include bodoni-bold;
+				font-size: 48px;
+				line-height: 50px;
+			  padding-bottom:20px;
+				margin-bottom: 20px;
+				border-bottom: 1px solid rgba($color-grey, 0.5);
+				letter-spacing: 0.5px;
+			  @media screen and (min-width:1280px) {
+				  padding-bottom: 25px;
+				  margin-bottom: 21px;
+			  }
+			}
+		  .dm-submenu-desc{
+			  @include nexa;
+			  font-size: 16px;
+			  line-height: 32px;
+			  letter-spacing: 0.32px;
+			  color: $color-green;
+
+			  @media screen and (min-width: 1920px) {
+				  padding-bottom: 11px;
+			  }
+		  }
+			.dm-submenu-item{
+			  &:not(:last-of-type){
+				  padding-bottom: 6px;
+			  }
+			  &__row{
+				display:flex;
+				padding-bottom: 4px;
+			  align-items: center;
+			  flex-wrap: nowrap;
+			  gap: 6px 20px;
+				  justify-content: space-between;
+			  }
+			  &__title{
+				@include bodoni-bold;
+			  font-size: 24px;
+			  line-height: 30px;
+				  color: $color-green;
+
+				  @media screen and (min-width: 1280px) {
+					  line-height: 48px;
+				  }
+				  .v-icon__svg{
+				  height:24px;
+				  margin-top:-10px;
+				  margin-right:8px;
+				  width: 24px;
+				}
+			  }
+			  &__price{
+				@include nexa-bold;
+			  font-size: 14px;
+			  line-height: 18px;
+			  letter-spacing: 1.4px;
+			  text-transform: uppercase;
+			  color: $color-green;
+				text-align: right;
+			  }
+			  &__addons{
+				display:flex;
+				flex-direction: column;
+				font-size:13px;
+				letter-spacing:0.65px;
+				line-height:30px;
+				text-transform: uppercase;
+				@media screen and (min-width:1280px) {
+					margin-bottom: 11px;
+					margin-top: -4px;
+				}
+				.addon-title{
+					@include nexa;
+					font-size: 16px;
+					line-height: 32px;
+					letter-spacing: 0.32px;
+				  color:$color-green;
+					text-transform: initial;
+				}
+				.addon-price{
+					@include nexa-bold;
+					font-size: 14px;
+					line-height: 18px;
+					letter-spacing: 1.4px;
+					text-transform: uppercase;
+					color:$color-green;
+				}
+			  }
+			  &__addon{
+				display:flex;
+			  justify-content: space-between;
+			  align-items: center;
+			  flex-wrap: wrap;
+			  gap: 6px 20px;
+			  width: 100%;
+			  }
+			  &__description{
+				  color: $color-green;
+				  @include nexa;
+				  font-size: 16px;
+				  line-height: 32px;
+				  letter-spacing: 0.32px;
+
+				  @media screen and (min-width: 1920px) {
+					  margin-bottom: 8px;
+					  margin-top: -4px;
+				  }
+
+				  &+.dm-submenu-item__footer{
+					  @media screen and (min-width: 1920px) {
+						  margin-top: -10px;
+					  }
+				  }
+			  }
+
+				&__footer {
+					@include nexa;
+					font-size: 14px;
+					line-height: 32px;
+					letter-spacing: 0.28px;
+					color: $color-green;
+				}
+			}
+		  }
+		}
+	  }
+	}
+	#{$layout}__footer{
+	  margin:0 auto;
+		padding:67px 0 0;
+	  .wysiwyg{
+		p{
+			@include nexa;
+			font-size: 14px;
+			line-height: 32px;
+			letter-spacing: 0.28px;
+			margin-bottom: 11px;
+		}
+	  }
+	}
+  }
+}

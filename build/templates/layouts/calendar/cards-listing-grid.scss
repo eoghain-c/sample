@@ -1,0 +1,63 @@
+@import '../../../common/sass/core';
+
+/* Component: Cards Listing Grid
+   -------------------------------------------------------------------------- */
+
+.cards-listing-grid {
+	$this: &;
+	display: grid;
+	gap: 16px;
+	grid-template-columns: 1fr;
+	padding: 0 24px;
+	margin: auto;
+	width: 100%;
+
+	@media screen and (min-width: 768px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media screen and (min-width: 1280px) {
+		gap: 16px;
+		padding: 0;
+	}
+	
+	@media screen and (min-width: 1440px) {
+		gap: 32px;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	@media screen and (min-width: 1920px) {
+		gap: 38px 48px;
+	}
+
+	&--press,
+	&--custom-card-horizontal,
+	&--events-card-horizontal {
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-items: center;
+
+		@media screen and (min-width: 1280px) {
+			gap: 23px;
+		}
+
+		@media screen and (min-width: 1920px) {
+			padding: 0 376px;
+		}
+	}
+
+	&--events-card-horizontal {
+
+		@media screen and (min-width: 1280px) {
+			gap: 15px;
+		}
+	}
+	
+
+	&.events__calendar-list-cards {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		@media screen and (min-width: 1024px) {
+			padding: 0;
+		}
+	}
+}

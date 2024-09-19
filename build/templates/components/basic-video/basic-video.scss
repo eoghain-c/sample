@@ -1,0 +1,152 @@
+/*------------------------------------*\
+  #BASIC-VIDEO
+\*------------------------------------*/
+
+@import '../../../common/sass/core';
+
+.basic-video {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+
+	video {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% 50%;
+	}
+	
+	&.video-hidden {
+		
+		video {
+			display: none;
+		}
+		
+		.basic-video {
+			&__control, &__poster-button {
+				display: none;
+			}
+			
+			&__fallback {
+				display: block;
+			}
+		}
+	}
+
+	&__control {
+		background-color: transparent;
+		border: 2px solid $white;
+		border-radius: 50%;
+		display: grid;
+		filter: drop-shadow(0 0 4px rgb($black, 0.4));
+		height: 32px;
+		inset: auto auto 32px 32px;
+		place-items: center center;
+		position: absolute;
+		width: 32px;
+
+		&[data-playing="true"] {
+			.basic-video__icon {
+				border-color: transparent;
+
+				&:before,
+				&:after {
+					background-color: $white;
+					content: '';
+					height: 14px;
+					opacity: 1;
+					position: absolute;
+					transform: translateY(-50%);
+					width: 2px;
+				}
+
+				&:before {
+					inset: 50% auto auto 0;
+				}
+
+				&:after {
+					inset: 50% 0 auto auto;
+				}
+			}
+		}
+
+		&[data-playing="false"] {
+			.basic-video__icon {
+				border-bottom: 7px solid transparent;
+				border-left: 10px solid $white;
+				border-right: none;
+				border-top: 7px solid transparent;
+				margin-right: -4px;
+
+				&:before,
+				&:after {
+					content: '';
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	&__icon {
+		height: 14px;
+		position: relative;
+		transition: border-color 0.3s ease-in-out;
+		width: 10px;
+
+		&:before,
+		&:after {
+			transition: opacity 0.3s ease-in-out;
+		}
+	}
+
+	&__fallback {
+		height: 100%;
+		
+			display: none;
+	}
+
+	&__poster-button {
+		@include transition();
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		border: 0;
+		padding: 0;
+		display: flex;
+		opacity: 1;
+
+
+		&--hiding {
+			opacity: 0;
+		}
+
+		&--hidden {
+			display: none;
+		}
+	}
+
+	&__poster {
+		top: 0;
+		width: 100%;
+	}
+
+	&__poster-play {
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		top: calc(50% - 40px);
+		background: rgba(255,255,255,.5);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		font-size: 30px;
+		padding-left: 5px;
+		border: 4px solid white;
+		left: calc(50% - 40px);
+		color: white;
+	}
+}

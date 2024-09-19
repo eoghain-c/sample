@@ -1,0 +1,71 @@
+/*
+	Typography base styles
+*/
+
+
+/* Fonts
+   Only the woff format is required.
+   If your are missing the woff font formats: https://onlinefontconverter.com/
+   There are mixins in build/common/sass/02-tools/_typography.scss for each font-face.
+   -------------------------------------------------------------------------- */
+@font-face {
+	font-family: 'Nexa';
+	src: url('/content/themes/base/assets/font/Nexa-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Nexa';
+	src: url('/content/themes/base/assets/font/Nexa-RegularItalic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Nexa';
+	src: url('/content/themes/base/assets/font/Nexa-ExtraBold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+}
+
+
+/* Headings and paragraphs
+   -------------------------------------------------------------------------- */
+// Todo: Add one class for each typography mixin
+h1, .heading-1, .title {
+	@include heading-1();
+}
+
+h2, .heading-2 {
+	@include heading-2();
+}
+
+h3, .heading-3 {
+	@include heading-3();
+}
+
+h4, .heading-4 {
+	@include heading-4();
+}
+
+.intro-bold {
+	@include intro-bold();
+}
+
+.intro {
+	@include intro();
+}
+
+// Used in most layouts and cards
+p, .body-1 {
+	@include body-1();
+}
+
+.overline { display: block; @include nexa-bold(); color: #828282; font-size: 14px; line-height: 18px; letter-spacing: 1.4px; text-transform: uppercase; margin: 0 0 6px; }
+
+// Typography Styles
+em {
+	font-style: italic;
+}
+

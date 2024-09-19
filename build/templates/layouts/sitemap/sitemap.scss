@@ -1,0 +1,73 @@
+@import '../../../common/sass/core';
+
+
+.sitemap {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+	margin-bottom: 28px;
+
+	@media screen and (min-width:1280px) {
+		margin-top: 56px;
+	}
+	@media screen and (min-width:1920px) {
+		margin-top: 80px;
+	}
+
+	&__inner {
+		max-width: 1200px;
+		width: 100%;
+	}
+
+	&__heading {
+		text-align: center;
+	}
+
+	&__list {
+		padding-left: 0;
+
+		@include media-breakpoint-up(sm) {
+			column-count: 2;
+			break-inside: avoid;
+		}
+
+		@include media-breakpoint-up(lg) {
+			column-count: 3;
+		}
+
+		a {
+			@include transition();
+			display: block;
+			text-decoration: underline;
+			padding: 10px 0;
+			color: black;
+			font-size: 16px;
+		}
+
+		.children {
+			padding-left: 15px;
+
+			@include media-breakpoint-up(lg) {
+				padding-left: 20px;
+			}
+		}
+
+		.page_item_has_children {
+			break-inside: avoid-column;
+		}
+
+		> .page_item > a {
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		li > ul {
+			padding-left: 10px;
+		}
+	}
+
+	&__list,
+	&__list li > ul {
+		list-style: none;
+	}
+}

@@ -1,0 +1,265 @@
+@import '../../../common/sass/core';
+
+/* Common: Easepick Datepicker
+---------------------------------------------------------------------- */
+
+:host {
+	//--color-bg-default: #fff;
+	//--color-bg-secondary: #fff;
+	//--color-bg-unavailable: #fff;
+	//--color-bg-locked:  #fff;
+	//--color-bg-inrange: #f00;
+	//--color-bg-tooltip: #fff;
+	//
+	//--color-fg-default: #333;
+	//--color-fg-primary: #f00;
+	//--color-fg-secondary: #0f0;
+	//--color-fg-selected: #fff;
+	//--color-fg-muted: #0f0;
+	//--color-fg-accent: #333;
+	//--color-fg-locked: #ddd;
+	//--color-fg-tooltip: #333;
+	//
+	//--color-btn-primary-bg: #fff;
+	//--color-btn-primary-fg: #f00;
+	//--color-btn-primary-border: #f00;
+	//--color-btn-primary-hover-bg: #f00;
+	//--color-btn-primary-hover-fg: #fff;
+	//--color-btn-primary-hover-border: #f00;
+	//--color-btn-primary-disabled-bg: #f00;
+	//--color-btn-primary-disabled-fg: #fff;
+	//--color-btn-primary-disabled-border: #f00;
+	//
+	//--color-btn-secondary-bg: #fff;
+	//--color-btn-secondary-fg: #{$color-green};
+	//--color-btn-secondary-border: #{$color-green};
+	//--color-btn-secondary-hover-bg: #0f0;
+	//--color-btn-secondary-hover-fg: #fff;
+	//--color-btn-secondary-hover-border: #0f0;
+	//--color-btn-secondary-disabled-bg: #0f0;
+	//--color-btn-secondary-disabled-fg: #fff;
+	//--color-btn-secondary-disabled-border: #0f0;
+	//
+	//--color-border-default: #00f;
+	//--color-border-locked: #00f;
+	//
+	//--day-width: 42px;
+	//--day-height: 42px;
+	//--border-radius: 0;
+	//
+	//--primary-color: #333;
+	//--secondary-color: #0f0;
+	//--white-color: #fff;
+	//--black-color: #000;
+	//--lightgray-color: #ddd;
+	//--gray-color: #ddd;
+	//--red-color: #f00;
+}
+
+
+//
+///* Easepicker Container */
+//.easepick-container {
+//	&__inner {
+//		& > span:not(.easepick-wrapper) {
+//			display: none;
+//		}
+//	}
+//
+//	&__bind {
+//		display: none;
+//	}
+//}
+//
+//.easepicker {
+//	@include nexa-bold();
+//	border: 1px solid #00f;
+//	border-radius: 0;
+//	font-size: 18px;
+//	letter-spacing: 0.1em;
+//	line-height: 18px;
+//	margin-bottom: -6px;
+//	text-transform: uppercase;
+//	width: 100%;
+//
+//	&.inline {
+//		box-shadow: none !important;
+//	}
+//
+//	/* Calendar */
+//	.calendar {
+//		padding: 26px 15px 32px;
+//
+//		/* Calendar - Header */
+//		.header {
+//			margin-bottom: 20px;
+//			padding: 10px 0;
+//
+//			/* Calendar - Month Names */
+//			.month-name {
+//				@include nexa-bold();
+//				color: var(--color-fg-secondary);
+//				font-size: 18px;
+//				order: 2;
+//				text-align: center;
+//
+//				& > span {
+//					font-weight: inherit;
+//				}
+//			}
+//
+//			/* Calendar - Next/Prev Buttons */
+//			.next-button,
+//			.previous-button {
+//				height: 36px;
+//				width: 36px;
+//			}
+//
+//			.next-button {
+//				order: 3;
+//				transform: rotate(-90deg);
+//			}
+//
+//			.previous-button {
+//				order: 1;
+//				transform: rotate(90deg);
+//			}
+//
+//			button {
+//				& > svg {
+//					transition: $transition-base;
+//					transform: unset;
+//					height: 20px;
+//					width: 20px;
+//				}
+//
+//				&:hover, &:focus {
+//					background-color: initial;
+//
+//					& > svg {
+//						fill: var(--color-btn-secondary-hover-bg);
+//						color: var(--color-btn-secondary-hover-bg);
+//					}
+//				}
+//			}
+//		}
+//
+//		/* Calendar - Day Names */
+//		.daynames-row {
+//			margin-bottom: 7px;
+//
+//			.dayname {
+//				font-size: 14px; // TODO: Single letter as 18px
+//				letter-spacing: 0.1em;
+//				line-height: 18px;
+//				text-transform: uppercase;
+//			}
+//		}
+//
+//		/* Calendar - Days Grid */
+//		& > .days-grid {
+//			& > .day {
+//				@include nexa-bold();
+//				border-radius: 0;
+//				font-size: 16px;
+//
+//				&.start {
+//					border-radius: 50% 0 0 50%;
+//
+//					&.flipped {
+//						border-radius: 0 50% 50% 0 !important;
+//					}
+//
+//					&.not-available {
+//						font-style: normal;
+//					}
+//				}
+//
+//				&.end {
+//					border-radius: 0 50% 50% 0;
+//
+//					&.flipped {
+//						border-radius: 50% 0 0 50% !important;
+//					}
+//				}
+//
+//				&.in-range {
+//					color: var(--color-fg-selected);
+//
+//					&:hover, &:focus {
+//						color: var(--color-fg-selected);
+//						border-radius: 0;
+//					}
+//				}
+//
+//				&:hover, &:focus {
+//					border: 1px solid var(--color-fg-primary);
+//					color: var(--color-fg-default);
+//					border-radius: 50%;
+//				}
+//			}
+//		}
+//	}
+//
+//	/* Double Calendar */
+//	.calendars.grid-2 {
+//		.calendar {
+//
+//			&:first-of-type {
+//				padding-left: 23px;
+//				padding-right: 16px;
+//			}
+//
+//			&:last-of-type {
+//				padding-left: 16px;
+//				padding-right: 23px;
+//			}
+//
+//			& > .days-grid {
+//				& > .day {
+//					width: 43px;
+//					max-width: 43px;
+//				}
+//			}
+//		}
+//	}
+//}
+
+
+.easepick-wrapper { z-index: 9; }
+.easepick-container { @include nexa(); }
+.calendars .calendar>.header .previous-button,
+.calendars .calendar>.header .next-button { order: 3; transition: all 0.3s ease-in-out; border: 1px solid rgba(0,0,0,0); border-radius: 50%; padding: 0; }
+.calendars .calendar>.header .previous-button { order: 1; transform: scaleX(-1); }
+.calendars .calendar>.header .previous-button:hover,
+.calendars .calendar>.header .next-button:hover { border: 1px solid $color-green; }
+.container>footer .footer-buttons>button.cancel-button { display: none }
+.container>footer .footer-buttons { justify-content: center }
+.container>footer { background-color: $white }
+.container>footer .footer-buttons>button.apply-button:disabled {background-color: rgba($color-green, 0.7)}
+.container>footer .footer-buttons>button.apply-button {@include button-reset; @include transition(); @include nexa-bold; background-color: $color-green; padding: 15px 17px 14px 20px; color: $color-white; font-size: 14px; letter-spacing: .145em; line-height: 100%; text-transform: uppercase}
+.calendar>.header { padding: 0; }
+//.calendar>.header button:hover { background-color: initial; border: 1px solid $color-green; }
+.calendar>.header button>svg { font-size: 28px; color: $color-green; }
+.calendar>.header button:hover>svg { color: $color-black; }
+.calendar>.header .month-name { @include nexa-bold(); color: $color-black; order: 2; text-align: center; }
+.calendar>.header .month-name>span { font-weight: unset; }
+// Days
+.calendar>.daynames-row>.dayname { color: $color-black; }
+// Current Day
+.calendar>.days-grid>.day { border: 1px solid rgba(0,0,0,0); transition: border 0.3s ease-in-out; }
+.calendar>.days-grid>.day.selected { background-color: $color-green; }
+.calendar>.days-grid>.day.today { color: $color-green; }
+.calendar>.days-grid>.day:hover { border: 1px solid $color-green; color: initial; }
+.container { color: #585858; }
+// Range Styling
+.container.range-plugin .calendar>.days-grid>.day.start,
+.container.range-plugin .calendar>.days-grid>.day.end { background-color: $color-green; }
+.container.range-plugin .calendar>.days-grid>.day.start:after { border-left: 8px solid $color-green; }
+.container.range-plugin .calendar>.days-grid>.day.end:after { border-right: 8px solid $color-green; }
+.container.range-plugin .calendar>.days-grid>.day.start.flipped:after { border-left-color: transparent; border-right-color: $color-green; }
+.container.range-plugin .calendar>.days-grid>.day.end.flipped:after { border-left-color: $color-green; border-right-color: transparent; }
+.container.range-plugin .calendar>.days-grid>.day.in-range { background-color: $color-green-light; color: #fff; }
+
+
+

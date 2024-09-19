@@ -1,0 +1,29 @@
+@import '../../../common/sass/core';
+
+
+/* Basic Content
+   -------------------------------------------------------------------------- */
+
+.basic-content {
+  color: $color-grey-dark;
+
+  &__inner {
+	max-width: 968px;
+	margin-left: auto;
+	margin-right: auto;
+  }
+
+  &__content {
+	padding: 40px 24px;
+	width: 100%;
+
+	@media screen and (min-width: 768px) {
+	  padding-left: 40px;
+	  padding-right: 40px;
+	}
+
+	.wysiwyg:not(:last-child) {
+	  margin-bottom: 1rem;
+	}
+  }
+}

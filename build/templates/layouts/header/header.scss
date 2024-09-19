@@ -1,0 +1,280 @@
+@import '../../../common/sass/core';
+
+// WP-Admin Bar Fix
+.admin-bar .header {
+  top: 46px;
+  @media screen and (min-width:783px) { // added custom breakpoint for when wp-admin bar shrinks in size.
+    top:32px;
+  }
+}
+
+.header {
+  $layout: &;
+  // Main Header styling
+  position: fixed;
+  transition: all 0.35s ease-in-out;
+  z-index: 5;
+  width: 100%;
+  max-width: $site-max-width;
+
+  &__inner {
+  	background-color: rgba(0, 0, 0, 0);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 32px 28px 32px 24px;
+	@media screen and (min-width: 768px) {
+	  padding: 27px 40px;
+	}
+	@media screen and (min-width: 1280px) {
+	  grid-template-columns: 23.07vw auto;
+	}
+	@media screen and (min-width: 1920px) {
+	  padding: 30px 48px 30px 52px;
+		grid-template-columns: 445px auto;
+	}
+
+	.logo-container {
+	  .v-icon__svg {
+		color: $color-white;
+		filter: $color-white;
+		height: 65px;
+		transition: color ease-in-out 0.35s;
+		width: 156px;
+		@media screen and (min-width: 768px) {
+		  height: 67px;
+		  margin-top: 2px;
+		  width: 160px;
+		}
+		@media screen and (min-width: 1920px) {
+		  margin-left: -4px;
+		  margin-top: 2px;
+		  width: 264px;
+		  height: 111px;
+		}
+	  }
+	}
+
+	.menu-container {
+	  align-items: center;
+	  display: flex;
+	  justify-content: flex-end;
+	  margin-left:auto;
+	  @media screen and (min-width: 768px) {
+		padding-top: 15px;
+	  }
+	  @media screen and (min-width: 1280px) {
+		margin-left:unset;
+	  }
+	  @media screen and (min-width: 1920px) {
+		padding-top: 0;
+	  }
+
+	  &__primary {
+		display: grid;
+		width: 100%;
+		@media screen and (min-width: 1280px) {
+		  grid-template-columns: auto 18.385vw;
+		}
+		@media screen and (min-width: 1920px) {
+			grid-template-columns: auto 449px;
+		}
+
+		.primary-menu {
+		  margin-left: auto;
+		  @media screen and (min-width: 1280px) {
+			margin-right:auto;
+		  }
+		  @media screen and (min-width: 1920px) {
+			margin-top: -12px;
+		  }
+		}
+	  }
+
+	  #{$layout}-cta {
+		@media screen and (min-width: 768px) {
+		  display: flex;
+		  justify-content: flex-end;
+		}
+		@media screen and (min-width: 1920px) {
+		  margin-top: -23px;
+		}
+
+		.reserve-link {
+		  display: none;
+		  @media screen and (min-width: 768px) {
+			@include nexa-bold;
+			display: block;
+			font-size: 14px;
+			letter-spacing: 0.145em;
+			padding: 15px 17px 14px 20px;
+			text-transform: uppercase;
+		  }
+		  @media screen and (min-width: 1920px) {
+			font-size: 16px;
+			margin-top: -1px;
+			letter-spacing: 0.15em;
+			padding: 19px 36px 20px 40px;
+		  }
+		}
+	  }
+
+	}
+
+	// Mobilemenu Toggle
+	#{$layout}__toggle {
+	  @include button-reset;
+	  @include nexa-bold;
+	  color: $color-white;
+	  font-size: 14px;
+	  letter-spacing: 0.0875em;
+	  line-height: 18px;
+
+	  &--menu {
+		display: flex;
+		align-items: center;
+
+		.v-icon__svg {
+		  color: $color-white;
+		  display: block;
+		  height: 25px;
+		  margin-right: 7px;
+		  transition: color 0.35s ease-in-out;
+		  width: 30px;
+		}
+
+		@media screen and (min-width: 768px) {
+		  margin-right: 22px;
+		}
+		@media screen and (min-width: 1280px) {
+		  display: none;
+		}
+	  }
+	}
+  }
+  // Sticky Header specific styling
+  &--sticky, &__megamenu--active, &__mobilemenu--active{
+	z-index: 10;
+	  .header__inner{
+		  background-color: $color-white;
+		  padding: 32px 28px 32px 24px;
+
+		  @media screen and (min-width: 768px) {
+			  padding: 30px 48px 30px 52px;
+		  }
+		  @media screen and (min-width: 1280px) {
+			  padding: 15px 48px 15px 52px;
+		  }
+	  }
+	  .logo-container {
+		  .v-icon__svg {
+			  width: 156px;
+			  height: 69px;
+			  color: $color-green;
+			  margin-top: 4px;
+
+			  @media screen and (min-width:768px) {
+				  width: 172px;
+			  }
+			  @media screen and (min-width:1920px) {
+				  height: 70px;
+				  margin-top: 3px;
+				  width: 234px;
+			  }
+		  }
+	  }
+	  .menu-container{
+		  @media screen and (min-width: 1280px) {
+			  padding-top: 0;
+		  }
+		  &__primary {
+			  @media screen and (min-width: 1280px) {
+				  margin-top: 3px;
+				  padding-left: 0;
+			  }
+			  @media screen and (min-width: 1920px) {
+				  margin-top: 0;
+				  padding-left: 11px;
+			  }
+
+			  .primary-menu {
+				  @media screen and (min-width: 1280px) {
+					  margin-top: 9px;
+				  }
+
+				  @media screen and (min-width: 1920px) {
+					  margin-top: 14px;
+				  }
+			  }
+			  .header-cta{
+				  margin-top:2px;
+				  .reserve-link{
+					  margin-right:8px;
+					  margin-top:0;
+				  }
+			  }
+		  }
+
+		  &__secondary{
+			  display: none;
+		  }
+		  .header-cta .link-gallery {
+			  @media screen and (min-width: 1280px) {
+				  display: block;
+			  }
+		  }
+	  }
+	.phone-link {
+	  .v-icon__svg {
+		color:$color-grey-dark;
+	  }
+	}
+	.header__toggle--menu{
+	  color: $color-grey-dark;
+	  .v-icon__svg{
+		color:$color-grey-dark;
+	  }
+	}
+	.reserve-link{
+	  background-color: $color-green;
+	  border: 1px solid  $color-green;
+	  color: $color-white;
+
+	  &.active, &:hover, &:focus {
+		background: $white;
+		border: 1px solid $color-grey-dark;
+		color: $color-grey-dark;
+	  }
+	}
+	.megamenu {
+	  .megamenu__menu {
+		.megamenu__item { // place inside &__menu as the plugin targeting is more specific
+		  > .megamenu__btn, > .megamenu__link {
+			color: $color-grey-dark;
+
+			@media screen and (min-width: 1920px) {
+			  font-size: 21px;
+			  letter-spacing: -0.025em;
+			  line-height: 21px;
+			}
+
+			&:hover, &:focus, &:active {
+			  color: $color-grey-dark;
+			}
+
+			&:before {
+			  background: $color-grey-dark;
+			  bottom: 1px;
+			}
+
+			&:hover, &:focus {
+			  &:before {
+				background: $color-grey-dark;
+				bottom: -5px;
+			  }
+			}
+		  }
+		}
+	  }
+	}
+  }
+}

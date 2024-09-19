@@ -1,0 +1,103 @@
+/*
+   Include component styles here that are not complex enough to justify their
+   own file.
+*/
+
+
+.clear-margins {
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.post-info { display: flex; flex-wrap: wrap; gap: 16px 48px; align-items: flex-start; list-style: none; margin: 0; padding: 0;
+  @media screen and (min-width:1280px) { margin: 19px 0 21px; }
+
+  &__stat { @include nexa-bold; color: $color-green; display: flex; align-items: center; list-style: none; padding: 0; font-size: 10px; line-height: 13px; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; margin: 0;
+	@media screen and (min-width:1280px) { font-size: 12px; line-height: 15px; }
+	@media screen and (min-width:1920px) { font-size: 14px; line-height: 18px; }
+
+	.v-icon__svg { height: 14px; width: 14px; margin: 0 8px 0 0;
+	    @media screen and (min-width:1280px) { height: 18px; width: 18px; margin: 0 12px 0 0; }
+	    @media screen and (min-width:1920px) { height: 24px; width: 24px; margin: 0 16px 0 0; }
+	}
+  }
+
+  &__disclaimer { @include nexa; color: $color-grey-dark; font-size: 10px; line-height: 13px; letter-spacing: 0.02em; font-style: italic;
+	@media screen and (min-width:1280px) { font-size: 12px; line-height: 15px; }
+	@media screen and (min-width:1920px) { font-size: 14px; line-height: 18px; }
+  }
+}
+
+
+/* WYSIWYG
+	Add wysiwyg class to include default styles for wysiwyg content.  This is so
+	default styles on ul's and a's are not globally set.
+	ex:
+	<div class="wysiwyg">
+		<?php echo $content; ?>
+	</div>
+   -------------------------------------------------------------------------- */
+.wysiwyg {
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+
+	ul {
+		@include default-unordered-list;
+	}
+
+	a {
+		@include default-link;
+	}
+
+	table {
+		@include default-table();
+	}
+
+
+	// Default wysiwyg alignment classes
+	// Todo: modify as needed
+
+	.alignleft {
+		@include media-breakpoint-up(md) {
+			float: left;
+			padding-right: 20px;
+		}
+	}
+
+	.aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.alignright {
+		@include media-breakpoint-up(md) {
+			float: right;
+			padding-left: 20px;
+		}
+	}
+}
+
+
+
+/* === REMODAL === */
+.remodal-wrapper { overflow: hidden !important; }
+.remodal-overlay { background: rgba(0,0,0,.78); }
+.remodal-close { @include nexa-bold(); font-size: 12px; appearance: none; background: none; border: 0; padding: 0; position: absolute; right: 0; top: -24px; color: #fff; text-transform: uppercase;
+	@media screen and (min-width: 1280px) { font-size: 12px;  }
+	.v-icon__svg { position: relative; top: -1px; margin-left: 6px; }
+}
+.remodal {
+
+}
+

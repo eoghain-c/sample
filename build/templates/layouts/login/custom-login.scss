@@ -1,0 +1,220 @@
+/* Custom WordPress Login Page Styling */
+
+@import '../../../common/sass/core';
+
+html, body {
+	@include nexa;
+	padding: 0;
+	margin: 0;
+}
+body.login {
+	background-color: $color-green;
+}
+
+body.login,
+body.wp-admin {
+	width: 100%;
+
+	#login {
+		padding: 8% 0;
+		max-width: 85vw;
+		width: 500px;
+		p {
+			font-size: 12px;
+			@media screen and (min-width: 768px) {
+				font-size: 16px;
+			}
+			&.message {
+				border: none;
+			}
+		}
+		h1 a {
+			background-image: url('/content/themes/base/assets/img/icons/logo-greenbrier.svg');
+			background-size: 240px;
+			filter: $filter-white;
+			height: 100px;
+			max-width: 250px;
+			width: 100%;
+			@media screen and (min-width: 768px) {
+				background-size: 250px;
+				height: 120px;
+
+			}
+		}
+
+		#loginform {
+			border: 1px solid $color-grey;
+			padding: 10vw;
+			@media screen and (min-width: 768px) {
+				padding: 64px;
+			}
+
+			label {
+				@include nexa-bold;
+				color: $color-green;
+				text-transform: uppercase;
+				font-size: 10px;
+				line-height: 13px;
+				letter-spacing: 1.5px;
+				@media screen and (min-width: 768px) {
+					font-size: 12px;
+					line-height: 15px;
+					letter-spacing: 1.8px;
+				}
+				@media screen and (min-width: 1280px) {
+					font-size: 14px;
+					line-height: 18px;
+					letter-spacing: 1.4px;
+				}
+			}
+			input[type="text"] {
+				@include nexa;
+				background-color: $color-white;
+				border: 1px solid $color-grey;
+				font-size: 14px;
+				height: 46px;
+				max-width: 370px;
+				@media screen and (min-width: 768px) {
+					font-size: 16px;
+				}
+			}
+			input[type="password"] {
+				@include nexa;
+				background-color: $color-white;
+				border: 1px solid $color-grey;
+				font-size: 14px;
+				height: 46px;
+				max-width: 370px;
+				@media screen and (min-width: 768px) {
+					font-size: 16px;
+				}
+			}
+			.button-primary {
+				@include nexa-bold;
+				border-radius: 1px;
+				background-color: $color-green;
+				border: 1px solid $color-green;
+				color: $color-white;
+				float: right;
+				font-size: 10px;
+				line-height: 13px;
+				letter-spacing: 1.5px;
+				min-width: 120px;
+				padding: 14px 30px;
+				transition: background-color 0.35s ease-in-out;
+				@media screen and (min-width: 768px) {
+					font-size: 15px;
+					letter-spacing: 1.8px;
+					line-height: 15px;
+				}
+
+				&.active, &:hover, &:focus {
+					background: $color-white;
+					color: $color-green;
+
+				}
+			}
+
+			.forgetmenot {
+				input[type="checkbox"] {
+					border: 1px solid $color-grey;
+					@media screen and (max-width: 767px) {
+						height: 1rem;
+						width: 1rem;
+					}
+
+					&::before {
+						filter: invert(15%) sepia(70%) saturate(3023%) hue-rotate(347deg) brightness(83%) contrast(123%);
+						@media screen and (max-width: 767px) {
+							height: 1.5rem;
+							width: 1.5rem;
+							margin: -4px -6px;
+						}
+					}
+				}
+
+				label {
+					font-size: 10px;
+					line-height: 13px;
+					letter-spacing: 1.5px;
+					@media screen and (min-width: 768px) {
+						font-size: 12px;
+						line-height: 15px;
+						letter-spacing: 1.8px;
+					}
+					@media screen and (min-width: 1280px) {
+						font-size: 14px;
+						line-height: 18px;
+						letter-spacing: 1.4px;
+					}
+				}
+			}
+		}
+
+		#nav a, #backtoblog a {
+			@include nexa;
+			border-bottom: 1px solid rgba($color-white, 0);
+			color: $color-white;
+			font-size: 10px;
+			letter-spacing: 1.5px;
+			line-height: 13px;
+			transition: all 0.15s ease-in-out;
+			@media screen and (min-width: 768px) {
+				font-size: 12px;
+				letter-spacing: 1.8px;
+				line-height: 15px;
+			}
+			@media screen and (min-width: 1280px) {
+				font-size: 14px;
+				letter-spacing: 1.4px;
+				line-height: 18px;
+			}
+
+			&:hover, &:focus {
+				border-bottom: 1px solid rgba($color-white, 1);
+			}
+		}
+	}
+
+	#login_error {
+		@include nexa;
+		border-left-color: $color-green;
+		font-size: 15px;
+	}
+
+	#wp-auth-check-wrap #wp-auth-check {
+		background-color: $color-white;
+
+		@media screen and (min-width: 768px) {
+			margin-left: -300px;
+			width: 600px;
+		}
+	}
+
+	.privacy-policy-page-link{
+		a {
+			@include nexa;
+			color: $color-white;
+			border: 0;
+			border-bottom: 1px solid rgba($color-white, 0);
+			font-size: 10px;
+			line-height: 13px;
+			letter-spacing: 1.5px;
+			transition: all 0.15s ease-in-out;
+			@media screen and (min-width: 768px) {
+				font-size: 12px;
+				letter-spacing: 1.8px;
+				line-height: 15px;
+			}
+			@media screen and (min-width: 1280px) {
+				font-size: 14px;
+				letter-spacing: 1.4px;
+				line-height: 18px;
+			}
+
+			&:hover, &:focus {
+				border-bottom: 1px solid rgba($color-white, 1);
+			}
+		}
+	}
+}

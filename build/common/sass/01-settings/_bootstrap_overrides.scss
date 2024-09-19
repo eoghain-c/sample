@@ -1,0 +1,35 @@
+/**
+ * This file is used to override bootstrap variables.  build/node_modules/bootstrap/scss/_variables.scss
+ * Some examples are included below.
+ */
+
+
+/* Grid breakpoints
+   Define the minimum dimensions at which your layout will change,
+   adapting to different screen sizes, for use in media queries.
+   ------------------------------------------------------------------------ */
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+	xxl: 1440px,
+	max: 1920px
+);
+
+
+/* Body
+   ------------------------------------------------------------------------ */
+$body-color: $color-default;
+$body-bg: #f1f3f4; // This is the color of the address bar background in chrome
+
+
+/* Gutter width (half is added to each column)
+   ------------------------------------------------------------------------ */
+//$grid-gutter-width:  24px;
+
+
+/* Default transition.  Used in transition() mixin.
+   ------------------------------------------------------------------------ */
+$transition-base: all .25s ease-in-out;

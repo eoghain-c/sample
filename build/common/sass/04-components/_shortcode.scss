@@ -1,0 +1,83 @@
+@import '../../../common/sass/core';
+
+/* Shortcode: Icons
+-------------------------------------------------------------------------- */
+.generated-icon {
+	max-width: 960px;
+	width: fit-content;
+	display: inline-block;
+	margin-bottom: 6px;
+	margin-right: 20px;
+
+	@media screen and (min-width: 1280px) {
+		margin-bottom: 20px;
+	}
+
+	& .icon-container &__link{
+		align-items: center;
+		display:flex;
+	}
+
+	.icon-container {
+		display: flex;
+		gap: 16px;
+
+		@media screen and (min-width: 1280px) {
+			gap: 24px;
+		}
+	}
+
+	&__svg {
+		height:17px;
+		margin-right:11px;
+		margin-top:0;
+		width:17px;
+	}
+
+	&__svg.green {
+		filter: $filter-green;
+	}
+
+	&__svg.black {
+		filter: $filter-black;
+	}
+
+	&__content {
+		@include nexa-bold;
+		text-transform: uppercase;
+		color: $color-grey-dark;
+		text-align: left;
+		font-size: 14px;
+		line-height: 18px;
+		letter-spacing: 1.4px;
+	}
+	&__content.green{
+		color: $color-green;
+	}
+
+	&--normal {
+		@media screen and (min-width: 1280px) {
+			margin-bottom: 31px;
+		}
+		.generated-icon__content {
+			@include nexa;
+			font-size: 16px;
+			line-height: 32px;
+			letter-spacing: 0.32px;
+			text-transform: initial;
+			color: $color-grey-dark;
+			margin-top: -11px;
+			margin-right: 24px;
+		}
+
+		.generated-icon__svg {
+			width: 32px;
+			height: 32px;
+			margin-right: 22px;
+		}
+
+		.generated-icon__link {
+			align-items: flex-start;
+		}
+	}
+}

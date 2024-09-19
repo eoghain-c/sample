@@ -1,0 +1,187 @@
+@import '../../../common/sass/core';
+
+/* Component: Event Card
+   -------------------------------------------------------------------------- */
+.event-card {
+	$card: &;
+	&__wrapper, &__content-wrapper {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	&__buttons {
+		margin-top: auto;
+		.link__btn {
+			margin-bottom: 0;
+		}
+	}
+	&__media {
+		height: 255px;
+		border-radius: 2px;
+		@media screen and (min-width: 768px){
+			height: 282px;
+		}
+		@media screen and (min-width: 1280px){
+			height: 380px;
+		}
+		@media screen and (min-width: 1440px){
+			height: 480px
+		}
+	}
+
+	&__amenities {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 12px;
+
+		@media screen and (min-width: 768px) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 0 20px;
+		}
+
+		@media screen and (min-width: 1280px) {
+			margin-bottom: 13px;
+		}
+	}
+
+	&__amenity {
+		&-label {
+			@include nexa-bold;
+			text-transform: uppercase;
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			padding: 8px 0;
+			font-size: 12px;
+			line-height: 15px;
+			letter-spacing: 1.8px;
+			color: $color-green;
+		}
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+
+		.v-icon__svg {
+			width: 18px;
+			height: 18px;
+			color: $color-green;
+		}
+	}
+
+	&__content {
+		color: #666;
+		margin-bottom: 12px;
+
+		@media screen and (min-width: 1280px) {
+			margin-bottom: 22px;
+		}
+
+		p {
+			@include nexa;
+			font-size: 15px;
+			line-height: 27px;
+			letter-spacing: 0.3px;
+		}
+	}
+
+	.title {
+		@include bodoni-bold;
+		color: $color-black;
+		font-size: 24px;
+		line-height: 25px;
+		letter-spacing: -0.02em;
+		margin-bottom: 12px;
+		@media screen and (min-width:1280px) {
+			font-size: 30px;
+			line-height: 35px;
+			letter-spacing: -0.01em;
+			margin-bottom: 20px;
+		}
+	}
+	&__content-wrapper {
+		padding: 30px 0 26px;
+	}
+	
+	&.event-card-horizontal {
+				max-width: 724px;
+				width: 100%;
+				background-color: $white;
+				margin: 0 auto;
+				border-radius: 2px;
+
+				@media screen and (min-width: 1024px) {
+					margin: 0;
+				}
+
+				@media screen and (min-width: 1280px) {
+					max-width: unset;
+					max-height: 380px;
+				}
+
+				@media screen and (min-width: 1920px) {
+					max-height: 271px;
+				}
+
+				#{$card}__wrapper {
+					flex-direction: column;
+					border: 1px solid $color-grey-light;
+
+					@media screen and (min-width: 1280px) {
+						flex-direction: row;
+					}
+				}
+
+				#{$card}__title {
+					@include bodoni-bold;
+					font-size: 36px;
+					line-height: 44px;
+					@media screen and (min-width: 1280px) {
+						margin-bottom: 17px;
+					}
+
+					@media screen and (min-width: 1920px) {
+						margin-bottom: 5px;
+					}
+				}
+
+				#{$card}__image-wrapper {
+					@media screen and (min-width: 1280px) {
+						height: 300px;
+						flex-basis: 50%;
+					}
+
+					@media screen and (min-width: 1920px) {
+						flex-basis: 34.5%;
+					}
+				}
+
+				#{$card}__media {
+					@media screen and (min-width: 1280px){
+						height: 380px;
+					}
+
+					@media screen and (min-width: 1920px){
+						height: 271px;
+					}
+				}
+
+				#{$card}__content-wrapper {
+					padding: 30px 24px 26px;
+
+					@media screen and (min-width: 1280px) {
+						padding: 38px 49px 43px;
+						max-height: 380px;
+						overflow: auto;
+						flex-basis: 50%;
+					}
+
+					@media screen and (min-width: 1920px) {
+						flex-basis: 65.5%;
+						max-height: 270px;
+						padding: 38px 49px 23px;
+					}
+				}
+			}
+}

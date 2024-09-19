@@ -1,0 +1,66 @@
+@import '../../../common/sass/core';
+
+.search-form {
+	$this: &;
+
+	position: relative;
+	flex: 1;
+	align-items: center;
+
+	&--header {
+		border-right: none;
+
+		#{$this}__input {
+			//font-size: 22px;
+		}
+	}
+
+	&__input {
+		@include default-input();
+		@include transition();
+		//padding: 12px 24px 11px;
+		//font-size: 26px;
+		height: 100%;
+		color: $color-default;
+
+		@include media-breakpoint-up(md) {
+			//padding: 10px 24px;
+		}
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			-webkit-appearance: none;
+		}
+
+		&:focus {
+			outline: 0;
+			border: inherit;
+			box-shadow: 0 0 3px 2px lightblue;
+		}
+	}
+
+	&__btn {
+		@include transition();
+		@include button-reset();
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		font-size: 0;
+
+		&:hover, &:focus {
+			@include transition();
+			background-color: grey;
+
+			.icon--search {
+				color: white;
+			}
+		}
+	}
+
+	.icon--search {
+		font-size: 20px;
+	}
+}

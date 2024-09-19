@@ -1,0 +1,535 @@
+/**
+	Gravity Forms and other form styles
+*/
+
+
+/* Resets
+   -------------------------------------------------------------------------- */
+// remove rounded corners on ios
+textarea, input[type="text"], input[type="button"], input[type="submit"] {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+
+/* Forms
+   -------------------------------------------------------------------------- */
+// Todo: Add form styles
+
+.gform_wrapper {
+	form:not(#gform_1) {
+		max-width: 986px;
+		background: #fff;
+		border: 1px solid #E0E0E0;
+		padding: 28px 10px 20px;
+		margin: 0 auto;
+		@media screen and (min-width: 768px) {
+			padding: 42px 20px;
+		}
+		@media screen and (min-width: 1280px) {
+			padding: 64px;
+		}
+
+		.screen-reader-text {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			border: 0;
+		}
+
+		.gform_fields {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 2px;
+			@media screen and (min-width: 768px) {
+				gap: 13px 20px;
+			}
+			@media screen and (min-width: 1280px) {
+				gap: 28px 40px;
+			}
+		}
+
+		.gfield {
+			width: 100%;
+			text-align: left;
+		}
+
+		fieldset.gfield {
+			margin-bottom: 8px;
+			@media screen and (min-width: 768px) {
+				margin: 8px 0;
+			}
+			@media screen and (min-width: 1280px) {
+				margin: 4px 0 20px;
+			}
+
+			&--type-consent {
+				margin: 0 0 8px
+			}
+		}
+
+		.gfield_label, .gform-field-label--type-inline {
+			@include nexa-bold;
+			color: $color-green;
+			font-size: 10px;
+			line-height: 13px;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			@media screen and (min-width: 768px) {
+				font-size: 12px;
+				line-height: 15px;
+				letter-spacing: 1.8px;
+			}
+			@media screen and (min-width: 1280px) {
+				font-size: 14px;
+				line-height: 18px;
+				letter-spacing: 1.4px;
+			}
+		}
+
+		.gchoice .gform-field-label--type-inline {
+			font-size: 12px;
+			font-weight: 400;
+			letter-spacing: 0.24px;
+			line-height: 22px;
+			@media screen and (min-width: 1280px) {
+				font-size: 16px;
+				line-height: 22px;
+				letter-spacing: 0.32px;
+			}
+		}
+
+		legend.gfield_label {
+			line-height: 29px;
+			margin-bottom: 1px;
+			@media screen and (min-width: 768px) {
+				line-height: 17px;
+				margin-bottom: 15px;
+				margin-top: 8px;
+			}
+			@media screen and (min-width: 1280px) {
+				margin-bottom: 30px;
+			}
+		}
+	  	textarea{
+		  border: 1px solid #E0E0E0;
+		  width: 100%;
+		}
+		input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"],
+		input[type="time"], input[type="url"], input[type="search"], input[type="tel"], input[type="email"], select {
+			width: 100%;
+			height: 46px;
+			appearance: none;
+			border: 1px solid #E0E0E0;
+			padding: 8px 20px;
+			margin: 0;
+			line-height: 0;
+			@media screen and (min-width: 1280px) {
+				height: 62px;
+			}
+		}
+
+		input[type="number"] {
+			appearance: initial;
+		}
+
+		input[type="radio"] {
+			box-shadow: 0 0 0 1px #E0E0E0;
+			appearance: none;
+			width: 22px;
+			min-width: 22px;
+			max-width: 22px;
+			height: 22px;
+			min-height: 22px;
+			max-height: 22px;
+			border: 6px solid #fff;
+			border-radius: 50%;
+			background: #fff;
+			transition: background 0.25s ease-in-out;
+
+			&:hover, &:focus, &:active {
+				background: #dedede;
+			}
+
+			&:checked {
+				background: #585858;
+			}
+		}
+
+		input[type="submit"] {
+			appearance: none;
+			border: 1px solid $color-green;
+			border-radius: 2px;
+			background: $color-green;
+			color: #fff;
+			padding: 14px 30px;
+			@include nexa-bold();
+			font-size: 10px;
+			line-height: 13px;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+			transition: all 0.3s ease-in-out;
+			@media screen and (min-width: 768px) {
+				font-size: 12px;
+				line-height: 15px;
+				letter-spacing: 1.8px;
+			}
+			@media screen and (min-width: 1280px) {
+				font-size: 14px;
+				padding: 16px 32px;
+			}
+
+			&:hover, &:focus, &:active {
+				background: #fff;
+				border: 1px solid #e0e0e0;
+				color: #004438;
+			}
+
+		}
+
+		input[type="checkbox"] {
+			width: 18px;
+			height: 18px;
+			border-radius: 2px;
+			border: 1px solid #E0E0E0;
+			@media screen and (min-width: 1280px) {
+				width: 21px;
+				height: 21px;
+			}
+		}
+
+		// Containers
+		.easepick-wrapper { width: 100%; left: 0; top: 100%; }
+		.ginput_container { position: relative; }
+		// -- Select, Background Arrow
+		.ginput_container_select {
+			position: relative;
+
+			&:before {
+				content: "";
+				width: 20px;
+				height: 5px;
+				background: url(/content/themes/base/assets/img/icons/arrow.svg);
+				background-size: 20px 5px;
+				position: absolute;
+				right: 12px;
+				top: 50%;
+				transform: translateY(-50%) rotate(90deg);
+				filter: $filter-green;
+			}
+		}
+
+		// Custom Radio Buttons and associated styles
+		.gfield_radio {
+			display: flex;
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+
+		.gchoice {
+			display: flex;
+			align-items: flex-start;
+			margin-right: 26px;
+
+			label {
+				@include nexa;
+				font-size: 16px;
+				line-height: 22px;
+				letter-spacing: 0.32px;
+				margin: 0 0 0 12px;
+				text-transform: none;
+			}
+		}
+
+		// Consent and associated styles (some checkbox styles for activating)
+		.gfield--type-consent {
+			.gfield_label_before_complex {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				overflow: hidden;
+				clip: rect(0, 0, 0, 0);
+				border: 0;
+			}
+		}
+
+		.ginput_container_consent { margin-top: 8px;
+			@media screen and (min-width: 768px) {
+				margin-top: 0;
+			}
+		}
+		.ginput_container_consent, .ginput_container_checkbox .gchoice {
+			display: inline-block;
+			position: relative;
+			width: calc(100% - 34px);
+			label {
+				@include nexa;
+				font-size: 14px;
+				color: #585858;
+				font-feature-settings: 'liga' off;
+				line-height: 22px;
+				letter-spacing: 0.24px;
+				text-transform: none;
+				padding: 0 0 0 34px;
+				text-align: left;
+
+				&:before {
+					background: $color-white;
+					border: 1px solid $color-grey;
+					border-radius: 2px;
+					content: '';
+					height: 18px;
+					position: absolute;
+					top: 5px;
+					left: 0;
+					width: 18px;
+					z-index: 0;
+					@media screen and (min-width: 1920px) {
+						height: 21px;
+						width: 21px;
+						top: 2px;
+					}
+				}
+
+				&:after {
+					border-bottom: 3px solid #585858;
+					border-left: 3px solid #585858;
+					content: '';
+					opacity: 0;
+					position: absolute;
+					transform: translateY(-50%) rotate(-53deg);
+					width: 20px;
+					height: 10px;
+					top: 10px;
+					left: 2px;
+					@media screen and (min-width: 1920px) {
+
+					}
+				}
+			}
+
+			input {
+				display: block;
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				height: 15px;
+				width: 15px;
+				top: 2px;
+				left: 0;
+				z-index: 2;
+
+				@media screen and (min-width: 1920px) {
+					height: 21px;
+					width: 21px;
+				}
+			}
+
+			input:checked + label:after {
+				opacity: 1;
+			}
+
+
+		}
+
+		.ginput_container_checkbox {
+			.gfield_checkbox {
+				display: flex;
+				align-items: flex-start;
+				flex-wrap: wrap;
+			}
+
+			.gchoice {
+				width: auto;
+				label {
+					color: #004438;
+					margin-left: 0;
+					font-size: 16px;
+					line-height: 22px;
+					letter-spacing: .32px;
+				}
+			}
+		}
+
+		.gform_footer {
+			text-align: left;
+			@media screen and (min-width: 1920px) { margin-top: 36px; }
+		}
+
+	}
+
+	// Error Handling, Validation Messaging
+	.gform_validation_errors {
+		font-family: "bodoni-pt-variable", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		color: #231f20;
+		font-size: 22px;
+		line-height: 22px;
+		margin: 0 auto 24px;
+		text-align: center;
+		padding: 0 20px 24px;
+		max-width: 986px;
+		@media screen and (min-width: 768px) {
+			font-size: 24px;
+			line-height: 25px;
+			padding: 0 48px 32px;
+		}
+	}
+	.gfield_validation_message {
+		color: #b01630;
+		font-size: 14px;
+		margin-top: 6px;
+	}
+
+	// Datepicker
+
+	.easepick input + span {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
+	}
+
+}
+
+.gform_confirmation_wrapper .gform_confirmation_message {
+	font-family: "bodoni-pt-variable", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #231f20;
+	font-size: 22px;
+	line-height: 22px;
+	margin-bottom: 24px;
+	text-align: center;
+	@media screen and (min-width: 768px) {
+		font-size: 24px;
+		line-height: 25px;
+	}
+}
+
+
+/* === Form Specific Styling === */
+
+// Request a Tee Time: Form ID 2
+#gform_2 {
+	#field_2_1 { // First Name
+		@media screen and (min-width:768px) { max-width: 225px; }
+		@media screen and (min-width:1280px) { max-width: 249px; }
+	}
+	#field_2_3 { // Last Name
+		@media screen and (min-width:768px) { max-width: 225px; }
+		@media screen and (min-width:1280px) { max-width: 319px; }
+	}
+	#field_2_4 { // Player's in Group
+		@media screen and (min-width:768px) { max-width: 156px; }
+		@media screen and (min-width:1280px) { max-width: 164px; }
+	}
+	#field_2_15 { // Golf Course
+		@media screen and (min-width:768px) { max-width: 470px; }
+		@media screen and (min-width:1280px) { max-width: 560px; }
+	}
+	#field_2_16 { // Date of Play
+		@media screen and (min-width:768px) { max-width: 411px; }
+		@media screen and (min-width:1280px) { max-width: 405px; }
+	}
+	//#field_2_7 { // Date of Play
+	//	@media screen and (min-width:768px) { max-width: 411px; }
+	//	@media screen and (min-width:1280px) { max-width: 405px; }
+	//}
+	#field_2_14 { // Preferred Time
+		@media screen and (min-width:768px) { max-width: 215px; }
+		@media screen and (min-width:1280px) { max-width: 231px; }
+	}
+	#field_2_9 { // Accommodation Booked?
+		@media screen and (min-width:768px) { max-width: 412px; }
+		@media screen and (min-width:1280px) { max-width: 392px; }
+	}
+	#field_2_10 { // Need Clubs?
+		@media screen and (min-width:768px) { max-width: 214px; }
+		@media screen and (min-width:1280px) { max-width: 280px; }
+	}
+	#field_2_11 { // Email
+		@media screen and (min-width:768px) { max-width: 411px; }
+		@media screen and (min-width:1280px) { max-width: 428px; }
+	}
+	#field_2_12 { // Phone Number
+		@media screen and (min-width:768px) { max-width: 215px; }
+		@media screen and (min-width:1280px) { max-width: 249px; }
+	}
+	// Align Radio Buttons to Bottom of Container
+	#field_2_9, #field_2_10  { display: flex;
+		.ginput_container_radio { margin-top: auto; }
+	}
+}
+
+#gform_3 {
+	#field_3_1 { // First Name
+		@media screen and (min-width:768px) { max-width: 225px; }
+		@media screen and (min-width:1280px) { max-width: 249px; }
+	}
+	#field_3_3 { // Last Name
+		@media screen and (min-width:768px) { max-width: 225px; }
+		@media screen and (min-width:1280px) { max-width: 319px; }
+	}
+	#field_3_4 { // Gender
+		@media screen and (min-width:768px) { max-width: 156px; }
+		@media screen and (min-width:1280px) { max-width: 164px; }
+	}
+	#field_3_7 { // Preferred Service
+		@media screen and (min-width:768px) { max-width: 470px; }
+		@media screen and (min-width:1280px) { max-width: 560px; }
+	}
+	#field_3_16 { // Selected Date
+		@media screen and (min-width:768px) { max-width: 411px; }
+		@media screen and (min-width:1280px) { max-width: 405px; }
+	}
+	#field_3_9 { // Preferred Time
+		@media screen and (min-width:768px) { max-width: 215px; }
+		@media screen and (min-width:1280px) { max-width: 231px; }
+	}
+	#field_3_10 { // Accommodation Booked?
+		@media screen and (min-width:768px) { max-width: 100%; }
+	}
+	#field_3_12 { // Phone Number
+		@media screen and (min-width:768px) { max-width: 215px; }
+		@media screen and (min-width:1280px) { max-width: 249px; }
+	}
+	#field_3_13 { // Email
+		@media screen and (min-width:768px) { max-width: 411px; }
+		@media screen and (min-width:1280px) { max-width: 428px; }
+	}
+	#field_3_6 { // Comments
+		@media screen and (min-width:768px) { max-width: 100%; }
+		textarea {
+			width: 100%;
+			border: 1px solid #e0e0e0;
+		}
+	}
+}
+
+.container:not(.inline) { transition: none !important; }
+.container:not(.inline).show {
+	@media (max-width: 480px) {
+		width: 100% !important;
+		max-width: 308px !important;
+		bottom: initial !important;
+		left: initial !important;
+		right: initial !important;
+		top: initial !important;
+		position: absolute !important;
+		transition: none !important;
+	}
+}

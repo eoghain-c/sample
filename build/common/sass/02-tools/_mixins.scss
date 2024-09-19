@@ -1,0 +1,89 @@
+/**
+	General mixins
+*/
+
+
+/* Variable Image Height
+   Will scale from $startHeight to $endHeight, from $startWidth to
+   $endWidth.  Must be in proper media query.
+   -------------------------------------------------------------------------- */
+@mixin variable-height($startHeight, $endHeight, $startWidth, $endWidth) {
+	height: calc(#{$startHeight}px + ((100vw - #{$startWidth}px) / ((#{$endWidth} - #{$startWidth}) / (#{$endHeight} - #{$startHeight}))));
+}
+
+
+/* Variable Min Height
+   Will scale from $startHeight to $endHeight, from $startWidth to
+   $endWidth.
+   -------------------------------------------------------------------------- */
+@mixin variable-min-height($startHeight, $endHeight, $startWidth, $endWidth) {
+	min-height: calc(#{$startHeight}px + ((100vw - #{$startWidth}px) / ((#{$endWidth} - #{$startWidth}) / (#{$endHeight} - #{$startHeight}))));
+}
+
+
+/* Variable Image Width
+   Will scale from $startWidth to $endWidth, from $startScreenWidth to
+   $endScreenWidth.  Must be in proper media query.
+   -------------------------------------------------------------------------- */
+@mixin variable-width($startWidth, $endWidth, $startScreenWidth, $endScreenWidth) {
+	width: calc(#{$startWidth}px + ((100vw - #{$startScreenWidth}px) / ((#{$endScreenWidth} - #{$startScreenWidth}) / (#{$endWidth} - #{$startWidth}))));
+}
+
+
+/* Default Unordered List
+   This mixin is used in place of defining base ul styles and then having to
+   override them everywhere.  Ex: in a menu.
+   This should be included when you output an acf wysiwyg field.
+   -------------------------------------------------------------------------- */
+@mixin default-unordered-list() {
+	li {
+	}
+}
+
+
+/* Default Link Style
+   This mixin is used in place of defining base a styles and then having to
+   override them everywhere. Ex: text links vs buttons.
+   This should be included when you output an acf wysiwyg field.
+   -------------------------------------------------------------------------- */
+@mixin default-link {
+	color: $color-green;
+	&:hover {
+		color: $color-green;
+		text-decoration: underline;
+	}
+}
+
+
+/* Default Table
+   -------------------------------------------------------------------------- */
+@mixin default-table() {
+
+}
+
+
+/* Button Reset
+   -------------------------------------------------------------------------- */
+@mixin button-reset {
+	border: 0;
+	background: none;
+	padding: 0;
+	margin: 0;
+	-webkit-appearance: none;
+}
+
+
+/* List Reset
+   -------------------------------------------------------------------------- */
+@mixin list-reset {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* 100vh Mixin
+   -------------------------------------------------------------------------- */
+@mixin full-viewport-height {
+	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
+}

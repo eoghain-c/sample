@@ -1,0 +1,181 @@
+{
+    "key": "group_615b129882eb0",
+    "title": "Clone: Layout Settings",
+    "fields": [
+        {
+            "key": "field_615b132792382",
+            "label": "Layout ID",
+            "name": "layout_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "A unique value for the layout.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64b54ff6a44d0",
+            "label": "Hide Layout",
+            "name": "hide_layout",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_64b55017a44d1",
+            "label": "Layout Spacing",
+            "name": "layout_spacing",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "preset": "Preset"
+            },
+            "default_value": "preset",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_615b12a392380",
+            "label": "Top Spacing",
+            "name": "top_spacing",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "The spacing above the layout.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64b55017a44d1",
+                        "operator": "==",
+                        "value": "preset"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "large": "Large",
+                "full": "Full",
+                "half": "Half",
+                "none": "None"
+            },
+            "default_value": "full",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_615b131592381",
+            "label": "Bottom Spacing",
+            "name": "bottom_spacing",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "The spacing below the layout.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64b55017a44d1",
+                        "operator": "==",
+                        "value": "preset"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "large": "Large",
+                "full": "Full",
+                "half": "Half",
+                "none": "None"
+            },
+            "default_value": "full",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_65031fefea961",
+            "label": "Background Gradient",
+            "name": "background_gradient",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "fade-up": "Fade Up",
+                "fade-down": "Fade Down"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1694703659
+}

@@ -1,0 +1,161 @@
+@import '../../../common/sass/core';
+
+.columns {
+	&__inner {
+		background: linear-gradient(180deg, rgba($color-white, 0.70) 0%, $color-white 100%);
+		border-top: 1px solid $color-grey;
+		border-bottom: 1px solid $color-grey;
+		padding: 24px;
+
+		@media screen and (min-width: 768px) {
+			padding: 30px 40px;
+		}
+
+		@media screen and (min-width: 1920px) {
+			padding: 99px 40px;
+		}
+	}
+
+	&__content-wrapper {
+		margin-bottom: 18px;
+
+		@media screen and (min-width: 768px) {
+			margin-bottom: 26px;
+		}
+
+		@media screen and (min-width: 1920px) {
+			margin-bottom: 45px;
+		}
+	}
+
+	&__columns-wrapper {
+		margin: 0 auto;
+		max-width: 593px;
+
+		@media screen and (min-width: 768px) {
+			max-width: 1450px;
+		}
+	}
+
+	&__columns {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 -8px -18px;
+
+		@media screen and (min-width: 768px) {
+			margin: 0 -26px -27px;
+		}
+
+		@media screen and (min-width: 1920px) {
+			margin: 0 -36.5px -36px;
+		}
+	}
+
+	&__column {
+		text-align: center;
+		flex: 0 0 min(100%, 155px);
+		margin: 0 8px 18px;
+
+		@media screen and (min-width: 768px) {
+			margin: 0 26px 27px;
+		}
+
+		@media screen and (min-width: 1920px) {
+			flex: 0 0 auto;
+			margin: 0 50px 36px;
+		}
+	}
+  	&__column-icon {
+	  padding-bottom:24px;
+	  &--banquet{
+		.v-icon__svg{
+		  height:81px;
+		  width:100px;
+		}
+	  }
+	  &--chapel{
+	  .v-icon__svg{
+		  color: $white;
+		  height:77px;
+		  width:86px;
+	  }
+	  }
+	  &--classroom{
+		.v-icon__svg{
+		  height:74px;
+		  width:86px;
+		}
+	  }
+	  &--cocktail{
+		.v-icon__svg{
+		  height:67px;
+		  width:76px;
+		}
+	  }
+	  &--conference{
+		.v-icon__svg{
+		  height:77px;
+		  width:101px;
+		}
+	  }
+	  &--hollow{
+		.v-icon__svg{
+		  height:77px;
+		  width:70px;
+		}
+	  }
+	  &--theatre{
+		.v-icon__svg{
+		  height:74px;
+		  width:180px;
+		}
+	  }
+	  &--ushaped{
+		.v-icon__svg{
+		  height:77px;
+		  width:102px;
+		}
+	  }
+	}
+
+	&__column-value {
+		@include bodoni-bold;
+		color: $color-green;
+		font-size: 44px;
+		line-height: 100%;
+		margin-bottom: -1px;
+
+		@media screen and (min-width: 768px) {
+			font-size: 52px;
+			margin-bottom: 11px;
+		}
+
+		@media screen and (min-width: 1920px) {
+			font-size: 72px;
+			margin-bottom: 6px;
+		}
+	}
+
+	&__column-description {
+		@include nexa-bold;
+		color: $color-grey-dark;
+		font-size: 10px;
+		letter-spacing: 0.1em;
+		line-height: 16px;
+		padding: 0 18px;
+		text-transform: uppercase;
+
+		@media screen and (min-width: 768px) {
+			font-size: 12px;
+			line-height: 18px;
+			padding: 0 4px;
+		}
+
+		@media screen and (min-width: 1920px) {
+			font-size: 14px;
+			line-height: 20px;
+			padding: 0;
+		}
+	}
+}

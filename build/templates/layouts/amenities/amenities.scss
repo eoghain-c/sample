@@ -1,0 +1,149 @@
+@import '../../../common/sass/core';
+
+.amenities {
+
+	&__inner {
+		margin-left: auto;
+		margin-right: auto;
+		border-top: 1px solid #E0E0E0;
+		border-bottom: 1px solid #E0E0E0;
+		background: linear-gradient(180deg, rgba($white, 0.75) 0%, $white 100%);
+		padding: 42px 24px 36px;
+
+		@media screen and (min-width: 768px) {
+			padding: 42px 31px 36px 40px;
+		}
+		@media screen and (min-width: 1280px) {
+			padding: 85px 0 73px;
+		}
+	}
+
+	&__wrapper {
+		max-width: 327px;
+		margin: auto;
+
+		@media screen and (min-width: 768px) {
+			max-width: 697px;
+		}
+		@media screen and (min-width: 1280px) {
+			max-width: 1222px;
+		}
+	}
+
+	// Content
+	&__content-wrapper {
+		padding-bottom: 30px;
+
+		@media screen and (min-width: 1280px) {
+			padding-bottom: 50px;
+		}
+
+		.links {
+			justify-content: center;
+		}
+
+		.title {
+			@include bodoni-bold;
+			font-size: 28px;
+			line-height: 28px;
+			letter-spacing: -0.28px;
+			font-variation-settings: 'opsz' 48;
+			margin-bottom: 7px;
+
+			@media screen and (min-width: 768px) {
+				font-size: 30px;
+				line-height: 30px;
+				font-variation-settings: "opsz" 37;
+				margin-left: -9px;
+			}
+
+			@media screen and (min-width: 1280px) {
+				font-variation-settings: "opsz" 29;
+				font-size: 48px;
+				line-height: 50px;
+				margin-bottom: 5px;
+			}
+		}
+
+		.heading-4 {
+			@media screen and (min-width: 768px) {
+				margin-left: -7px;
+			}
+		}
+	}
+
+	.content {
+
+		&__links {
+			margin-top: 18px;
+		}
+	}
+
+	// Icons
+	&__icons {
+		display: grid;
+		grid-template-columns: repeat(2, 154px);
+		grid-row-gap: 21px;
+		grid-column-gap: 19px;
+
+		@media screen and (min-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-row-gap: 22px;
+			grid-column-gap: 6px;
+		}
+		@media screen and (min-width: 1280px) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-row-gap: 22px;
+			grid-column-gap: 87px;
+		}
+	}
+
+	&__icon-block {
+		display: flex;
+		align-items: flex-start;
+	}
+
+	&__icon {
+		flex-shrink: 0;
+		margin-right: 10px;
+
+		@media screen and (min-width: 768px) {
+			margin-right: 24px;
+		}
+
+		.v-icon__svg {
+			display: block;
+			height: 12px;
+			width: 12px;
+			color: $color-green;
+
+			@media screen and (min-width: 768px) {
+				height: 16px;
+				width: 16px;
+			}
+		}
+	}
+
+	&__icon-name {
+		@include nexa-bold;
+		color: $color-green;
+		font-size: 10px;
+		line-height: 13px;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		margin-bottom: 3px;
+		padding-right: 7px;
+
+		@media screen and (min-width: 768px) {
+			font-size: 12px;
+			line-height: 15px;
+			letter-spacing: 1.8px;
+			padding-right: 0;
+		}
+		@media screen and (min-width: 1280px) {
+			font-size: 14px;
+			line-height: 18px;
+			letter-spacing: 1.4px;
+		}
+	}
+}

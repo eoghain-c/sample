@@ -1,0 +1,57 @@
+/**
+	Base icon classes.  Examples and more info in README.md
+
+	For icons added to :before or :after.  Svg's must be colored with the filter property.
+ */
+
+
+/**
+	General icon classes
+   -------------------------------------------------------------------------- */
+.v-icon {
+	display: flex;
+	align-items: center;
+
+	&--before {
+		&:before {
+			height: 1em;
+			width: 1em;
+		}
+	}
+
+	&--after {
+		&:after {
+			height: 1em;
+			width: 1em;
+		}
+	}
+
+	&__svg {
+		height: 1em;
+		width: 1em;
+		display: inline-block;
+	}
+}
+
+
+/**
+	Classes for icons that are added to :before or :after.  In the class name, prefix the icon name
+	with a b- or a- for before or after.  Examples below.
+   -------------------------------------------------------------------------- */
+.v-icon {
+	// Example
+	&--b-search {
+		&:before {
+			content: url(#{$icons-dir}/search.svg);
+			filter: $filter-grey-600;
+		}
+	}
+
+	// Example
+	&--a-search {
+		&:after {
+			content: url(#{$icons-dir}/search.svg);
+			filter: $filter-grey-600;
+		}
+	}
+}

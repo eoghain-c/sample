@@ -1,0 +1,87 @@
+/*
+	Alert Banner
+*/
+
+@import '../../../common/sass/core';
+
+.alert-banner {
+	border-bottom: 1px solid $color-white;
+	max-width: $site-max-width;
+	position: relative;
+	width: 100%;
+	z-index: 10;
+
+	&--white {
+		background-color: $color-white;
+		border-bottom: 1px solid $color-black;
+
+		.alert-banner__wrapper, .alert-banner__close {
+			color: $color-black;
+		}
+	}
+
+	&--black {
+		background-color: $color-black;
+	}
+
+	&--green {
+		background: $color-green;
+	}
+
+	&__wrapper {
+		@include nexa;
+		color: $color-white;
+		font-size: 12px;
+		line-height: 30px;
+		position: relative;
+		width: 100%;
+		padding: 8px 70px 10px 30px;
+
+		@media screen and (min-width: 768px) {
+			font-size: 14px;
+			line-height: 34px;
+			padding-left: 55px;
+			padding-right: 80px;
+		}
+		@media screen and (min-width: 1280px) {
+			padding: 6px 120px 8px;
+		}
+		@media screen and (min-width: 1920px) {
+			font-size: 18px;
+			line-height: 42px;
+			padding: 6px 150px 8px;
+		}
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__close {
+		@include button-reset;
+		@include nexa;
+		color : $color-white;
+		display: block;
+		font-size: inherit;
+		line-height: inherit;
+		right: 15px;
+		position: absolute;
+		top: 8px;
+		transition: all 0.35s ease-in-out;
+
+		@media screen and (min-width: 768px) {
+			right: 20px;
+		}
+		@media screen and (min-width: 1280px) {
+			top: 6px;
+		}
+		@media screen and (min-width: 1920px) {
+			right: 25px;
+		}
+
+		&:hover, &:focus {
+			opacity: 0.7;
+		}
+	}
+}

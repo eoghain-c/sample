@@ -1,0 +1,14 @@
+@import 'core';
+
+@import '03-base/typography';
+@import '04-components/components';
+@import '04-components/buttons-links';
+
+
+#tinymce {
+	background-color: #f5ecdb; // TinyMCE background color so white text is visible
+
+	.btn{ // Did this so its not like you are clicking it!
+		cursor: text;
+	}
+}

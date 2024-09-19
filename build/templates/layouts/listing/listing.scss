@@ -1,0 +1,410 @@
+@import '../../../common/sass/core';
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.listing {
+  $layout: &;
+
+  &__filters {
+	margin-bottom: 39px;
+
+	@media screen and (min-width: 768px) {
+	  margin-bottom: 32px;
+	}
+	@media screen and (min-width: 1280px) {
+	  margin-bottom: 40px;
+	}
+	@media screen and (min-width: 1920px) {
+	  margin-bottom: 68px;
+	}
+
+	&--buttons {
+	  margin-bottom: 0;
+	}
+
+	  &--no-background {
+		  .listing__filters-bar {
+			  background: none;
+			  border: none;
+			  justify-content: center;
+		  }
+
+		  .listing__filters-clear {
+			 margin: 0;
+		  }
+
+		  .listing__filters-select {
+			  flex-grow: unset;
+		  }
+	  }
+  }
+
+  &__filters-title {
+	@include bodoni-bold();
+	font-size: 22px;
+	line-height: 100%;
+	margin-bottom: 32px;
+	text-align: center;
+
+	@media screen and (min-width: 1280px) {
+	  font-size: 36px;
+	  margin-bottom: 55px;
+	}
+  }
+
+  &__filters-buttons {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-bottom: 51px;
+
+	@media screen and (min-width: 768px) {
+	  padding-bottom: 44px;
+	}
+	@media screen and (min-width: 1280px) {
+	  padding-bottom: 52px;
+	}
+	@media screen and (min-width: 1920px) {
+	  padding-bottom: 80px;
+	}
+  }
+
+  &__filter-btn {
+	border: 0;
+	border-radius: 0;
+	color: $color-grey-dark;
+	font-size: 14px;
+	line-height: 1;
+	padding: 18px 34px;
+	text-align: center;
+	width: 50%;
+
+	@media screen and (min-width: 1024px) {
+	  min-width: 230px;
+	  width: unset;
+	}
+	@media screen and (min-width: 1280px) {
+	  font-size: 16px;
+	  padding: 28px 39px;
+	  min-width: 250px;
+	}
+
+	&.active, &:hover, &:focus {
+	  background: $color-green-light;
+	  border: 0;
+	  color: $color-green;
+	}
+  }
+  
+  &__filters-bar {
+	align-items: center;
+	background: $color-white;
+	border-top: 1px solid $color-grey;
+	border-bottom: 1px solid $color-grey;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 24px;
+	margin-bottom: 38px;
+	padding: 24px;
+	width: 100%;
+
+	@media screen and (min-width: 768px) {
+	  padding: 24px 40px;
+	}
+	@media screen and (min-width: 1280px) {
+	  gap: 35px;
+	  padding: 31px 48px;
+	}
+	@media screen and (min-width: 1920px) {
+	  padding: 31px 152px 31px 156px;
+	}
+
+	.title {
+	  margin-bottom: 0;
+	  text-align: left;
+
+	  @media screen and (min-width: 768px) {
+		margin-top: 3px;
+	  }
+	  @media screen and (min-width: 1280px) {
+	    margin-top: 8px;
+	  }
+	}
+  }
+
+  &__filters-select {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 13px;
+	width: 100%;
+
+	@media screen and (min-width: 768px) {
+	  flex-grow: 1;
+	  width: unset;
+	}
+	@media screen and (min-width: 1280px) {
+	  gap: 8px;
+	}
+  }
+
+  &__filter {
+	@include nexa-bold;
+	appearance: none;
+	color: $color-green;
+	cursor: pointer;
+	background: $color-white url('../img/backgrounds/arrow--dropdown.svg') no-repeat calc(100% - 29px);
+	background-size: 4px 16px;
+	border: 1px solid $color-grey;
+	border-radius: 2px;
+	font-size: 10px;
+	letter-spacing: 0.15em;
+	line-height: 13px;
+	padding: 13px 42px 13px 29px;
+	text-transform: uppercase;
+  	width: calc(50% - 7px);
+
+	@media screen and (min-width: 768px) {
+	  min-width: 140px;
+	  width: unset;
+	}
+	@media screen and (min-width: 1280px) {
+	  background-size: 4.5px 18px;
+	  font-size: 16px;
+	  line-height: 1;
+	  min-width: 250px;
+	  padding: 16px 42px 15px 29px;
+	}
+  }
+
+  &__filters-clear {
+	@include button-reset;
+	font-size: 12px;
+	letter-spacing: 0.15em;
+	margin-left: auto;
+
+	@media screen and (min-width: 1280px) {
+	  font-size: 16px;
+	}
+
+	span:after {
+	  opacity: 0;
+	}
+
+	&.active, &:hover, &:focus {
+	  span:after {
+		opacity: 1;
+	  }
+	}
+  }
+
+  &__filters-count {
+	@include nexa-bold;
+	color: $color-green;
+	font-size: 12px;
+	letter-spacing: 0.15em;
+	line-height: 100%;
+	padding: 0 24px;
+	text-transform: uppercase;
+
+	@media screen and (min-width: 768px) {
+	  padding: 0 40px;
+	}
+	@media screen and (min-width: 1280px) {
+	  font-size: 16px;
+	  padding: 0 48px;
+	}
+	@media screen and (min-width: 1920px) {
+	  padding: 0 156px;
+	}
+
+	span {
+	  font-size: 18px;
+
+	  @media screen and (min-width: 1280px) {
+	    font-size: 21px;
+	  }
+	}
+  }
+  
+  &__cards-wrapper {
+    position: relative;
+    min-height: 350px;
+  }
+  
+  &__loader {
+    background-color: $color-white;
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+
+    .loader {
+     animation: rotation 1s linear infinite;
+     border-radius: 50%;
+     border-top: 5px solid $color-green;
+     border-right: 5px solid transparent;
+     box-sizing: border-box;
+     display: block;
+     height: 48px;
+     position: relative;
+     width: 48px;
+    }
+  }
+  
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+	gap: 12px;
+    overflow: hidden;
+	padding: 0 24px;
+	position: relative;
+
+	@media screen and (min-width: 768px) {
+	  padding: 0 40px;
+	  gap: 16px;
+	}
+	@media screen and (min-width: 1280px) {
+	  padding: 0 48px;
+	  gap: 39px 48px;
+	}
+	@media screen and (min-width: 1920px) {
+	  padding: 0 156px;
+	}
+
+	// 2 up cards - default
+    .card {
+	  flex : 0 0 100%;
+
+	  // ( 100% / Number of columns ) - ( Gap Size *  ( (Number of columns - 1) / Number of columns )  ).
+	  @media screen and (min-width: 768px) {
+		flex: 0 0 calc((100% / 2) - (16px * ((2 - 1) / 2)));
+	  }
+	  @media screen and (min-width: 1280px) {
+		flex: 0 0 calc((100% / 2) - (48px * ((2 - 1) / 2)));
+	  }
+    }
+  }
+  
+  &__more {
+	display: block;
+	margin: 39px auto 0;
+
+	@media screen and (min-width: 768px) {
+	  margin-top: 32px;
+	}
+	@media screen and (min-width: 1280px) {
+	  margin-top: 40px;
+	}
+	@media screen and (min-width: 1920px) {
+	  margin-top: 64px;
+	}
+
+	&.hidden {
+	  display: none;
+	}
+  }
+
+  /* ----- Post Types / # of Columns ----- */
+  &--accommodations {
+	#{$layout}__cards {
+	  .card {
+		.title {
+		  color: $color-green;
+		}
+	  }
+	}
+  }
+
+  // 3up cards
+  &--three-column {
+	#{$layout}__cards {
+	  .card {
+		@media screen and (min-width: 768px) {
+		  flex: 0 0 calc((100% / 2) - (16px * ((2 - 1) / 2)));
+		}
+		@media screen and (min-width: 1280px) {
+		  flex: 0 0 calc((100% / 3) - (48px * ((3 - 1) / 3)));
+		}
+	  }
+	}
+  }
+
+  // 4 up cards
+  &--four-column {
+	#{$layout}__cards {
+	  @media screen and (min-width: 1280px) {
+		padding: 0 48px;
+	  }
+
+	  .card {
+		@media screen and (min-width: 768px) {
+		  flex: 0 0 calc((100% / 3) - (16px * ((3 - 1) / 3)));
+		}
+		@media screen and (min-width: 1280px) {
+		  flex: 0 0 calc((100% / 3) - (48px * ((3 - 1) / 3)));
+		}
+		@media screen and (min-width: 1920px) {
+		  flex: 0 0 calc((100% / 4) - (48px * ((4 - 1) / 4)));
+		}
+
+		&__media {
+		  height: 250px;
+
+		  @media screen and (min-width: 768px) {
+			height: 181px;
+		  }
+		  @media screen and (min-width: 1280px) {
+			height: 268px;
+		  }
+		  @media screen and (min-width: 1920px) {
+			height: 480px;
+		  }
+		}
+	  }
+	}
+
+	&.listing--shops {
+	  #{$layout}__cards {
+		.card {
+		  .title {
+			@media screen and (min-width: 1280px) {
+			  font-size: 30px;
+			}
+		  }
+		}
+	  }
+	}
+  }
+
+  /* ----- Background Overrides ----- */
+  &.background {
+	&.background-gradient--fade-down {
+	  overflow: initial;
+	}
+
+	// Child Taxonomies
+	&.listing--parent-taxonomy {
+	  background: transparent;
+	  overflow: initial;
+
+	  &.background-gradient--fade-down {
+		#{$layout}__filters--buttons {
+		  background: $color-green-light;
+		}
+
+		#{$layout}__cards-wrapper {
+		  background: linear-gradient(0deg, rgba($color-green-light, 0) 0%, $color-green-light 45%);
+		}
+	  }
+	}
+  }
+}

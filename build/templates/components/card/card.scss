@@ -1,0 +1,137 @@
+@import '../../../common/sass/core';
+
+/* Component: Default Card
+   -------------------------------------------------------------------------- */
+
+/* === CARD === */
+.card {
+	display: flex;
+	flex-direction: column;
+
+	& .card__media { height: 255px; position: relative;
+		@media screen and (min-width:768px) { height: 282px; }
+		@media screen and (min-width:1280px) { height: 365px; }
+		@media screen and (min-width:1920px) { height: 480px; }
+	    .media { border-radius: 2px; }
+
+		.card-title {
+			color: $color-white !important;
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			padding-right: 20px;
+			margin-bottom: 0;
+			@include bodoni-bold; font-size: 24px; line-height: 25px; letter-spacing: -0.02em;
+			@media screen and (min-width:1280px) { font-size: 36px; line-height: 44px; letter-spacing: -0.01em; bottom: 27px; left: 37px;padding-right: 37px;}
+
+			&--gallery-btn {
+				padding-right: 150px;
+				bottom: 17px;
+
+				@media screen and (min-width:1280px) {bottom: 12px;}
+			}
+		}
+
+		.card__gallery-btn {
+			z-index: 3;
+		}
+
+		.media-gradient {
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(0deg, rgba($black, 0.60) 7.31%, rgba($black, 0.00) 39.5%);
+		}
+	}
+
+	&__flag { position: absolute; top: 24px; left: 0; background: #fff; @include nexa-bold(); color: #231F20; font-size: 14px; line-height: 18px; letter-spacing: 1.4px; text-transform: uppercase; padding: 15px 8px 15px 20px;
+		.v-icon__svg { width: 22px; height: 20px; position: absolute; top: 50%; right: -3px; transform: translate(50%, -50%); color: #fff; }
+		&--notice { background: #BF1C7F; color: #fff;
+			.v-icon__svg { color: #BF1C7F; }
+		}
+	}
+	&__gallery-btn { display: flex; align-items: center; appearance: none; border: 0; padding: 0; margin: 0; background: none; color: #fff; position: absolute; bottom: 18px; right: 24px; @include nexa-bold(); font-size: 14px; line-height: 18px; letter-spacing: 1.4px; text-transform: uppercase;
+		.v-icon__svg { font-size: 24px; margin: 0 12px 0 0; }
+	}
+	&__content { padding: 30px 16px 26px;flex-grow: 1;
+		@media screen and (min-width:1280px) { padding: 26px 16px 26px; }
+
+		.content {display: flex;flex-direction: column;height: 100%; justify-content: space-between;}
+
+		//.links { margin-top: auto;}
+	}
+	&_stats { display: flex; flex-wrap: wrap; gap: 16px 48px; align-items: flex-start; list-style: none; margin: 0 0 16px; padding: 0;
+		@media screen and (min-width:1280px) { margin: 19px 0 21px }
+	}
+	&_stat { display: flex; align-items: center; list-style: none; padding: 0; @include nexa-bold(); font-size: 10px; line-height: 13px; letter-spacing: 1.5px; color: $color-green; text-transform: uppercase; white-space: nowrap; margin: 0;
+		@media screen and (min-width:1280px) { font-size: 12px; line-height: 15px; letter-spacing: 1.8px; }
+		@media screen and (min-width:1920px) { font-size: 14px; line-height: 18px; letter-spacing: 1.4px; }
+		.v-icon__svg { font-size: 12px; margin: 0 8px 0 0; }
+	}
+}
+
+
+
+/* === CARD CONTAINER === */
+.card-container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; max-width: 1608px; margin: 0 auto;
+	@media screen and (min-width:768px) { gap: 2px 16px; }
+	@media screen and (min-width:1280px) { gap: 24px 48px; }
+	.card { flex: 0 0 100%;
+		@media screen and (min-width:768px) { flex: 0 0 calc(50% - 8px); }
+		@media screen and (min-width:1280px) { flex: 0 0 calc(50% - 24px); }
+	}
+	&--3col { max-width: 1824px;
+		.card { flex: 0 0 100%;
+			@media screen and (min-width:768px) { flex: 0 0 calc(33.333% - 11px); }
+			@media screen and (min-width:1280px) { flex: 0 0 calc(33.333% - 32px); }
+		}
+	}
+}
+
+
+
+/* === CARD GALLERY === */
+.card__gallery {
+	width: 2575px; max-width: 92vw; height: 1200px; max-height: 92vh; background: none; border-radius: 2px; padding: 52px 0 68px;
+	position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+	.remodal-close { width: 32px; height: 32px; font-size: 13px; position: absolute; right: 0; top: 0; z-index: 1; line-height: 17px; border: 2px solid #fff; border-radius: 50%; padding: 6px; transition: transform 0.35s ease-in-out;
+		.v-icon__svg { margin: 0; }
+		&:hover, &:focus, &:active { transform: scale(1.2); }
+	}
+	.splide__arrows { top: auto; bottom: -68px; max-width: 480px; padding: 0 !important; left: 50%; transform: translateX(-50%) !important; top: auto !important; }
+	article { /*background: #fff;*/ }
+}
+
+
+/* === CARD OVERWRITES === */
+.card {
+	.wysiwyg {
+		.title { @include bodoni-bold; color: #231F20; font-size: 24px; line-height: 25px; letter-spacing: -0.02em;
+			@media screen and (min-width:1280px) { font-size: 36px; line-height: 44px; letter-spacing: -0.01em;}
+		}
+		p:not([class]), p[class=""], ul, ol { @include nexa(); color: #585858; font-size: 11px; line-height: 22px; letter-spacing: 0.01em;
+			@media screen and (min-width: 768px) { letter-spacing: 0.02em; }
+			@media screen and (min-width: 1280px) { font-size: 16px; line-height: 32px; letter-spacing: 0.32px; }
+		}
+		+ .links {
+			margin-top: 16px;
+			@media screen and (min-width: 1280px) { margin-top: 20px; }
+			.link { font-size: 10px; line-height: 13px; letter-spacing: 1.5px;
+				@media screen and (min-width: 1280px) { font-size: 14px; letter-spacing: 1.4px; }
+			}
+		}
+	}
+}
+
+.card {
+	&--custom {
+		.wysiwyg .title {
+			color: $color-green;
+			margin-bottom: 20px;
+		}
+
+		.v-icon__svg {
+			width: 17px;
+			height: 17px;
+		}
+	}
+}

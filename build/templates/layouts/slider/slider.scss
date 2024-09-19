@@ -1,0 +1,106 @@
+@import '../../../common/sass/core';
+
+.slider {
+  $layout: &;
+
+	&__inner {  }
+	/* === Heading === */
+	&__heading { padding: 0 24px; margin: 0 0 14px;
+		@media screen and (min-width:768px) { padding: 0 40px; }
+		@media screen and (min-width:1920px) { padding: 0 80px; margin: 0 0 42px; }
+		.content { display: flex; align-items: center; justify-content: space-between; gap: 24px;
+			@media screen and (min-width:768px) { justify-content: center; gap: 80px; }
+			@media screen and (min-width:1920px) { gap: 92px; }
+		}
+		.title { font-size: 28px; line-height: 28px; letter-spacing: -.02em; margin: 0 0 4px;
+			@media screen and (min-width:768px) { font-size: 30px; line-height: 30px; }
+			@media screen and (min-width:1920px) { font-size: 48px; line-height: 50px; letter-spacing: 0.01em; }
+		}
+		.links .link { font-size: 10px; font-weight: 800; line-height: 13px; letter-spacing: 1.5px;
+			@media screen and (min-width:768px) { font-size: 12px; letter-spacing: 1.2px; }
+			@media screen and (min-width:1920px) { font-size: 14px; letter-spacing: 1.4px; }
+		}
+	}
+
+	&__container { padding: 0 24px; margin: 0 auto;
+		@media screen and (min-width:768px) { padding: 0 40px; }
+		@media screen and (min-width:1920px) { padding: 0 80px; }
+		/* === Slider  === */
+		.splide-wrapper {
+			.splide__arrows { padding: 0; top: 162px;
+				@media screen and (min-width:768px) { top: 120px; }
+				@media screen and (min-width:1280px) { top: 180px; }
+				@media screen and (min-width:1920px) { top: 242px; }
+				.splide__arrow {
+					&--prev { transform: translateX(-50%) scale(-1); }
+					&--next { transform: translateX(50%); }
+					@media screen and (min-width:1920px) {
+						.v-icon__svg { width: 42px; }
+					}
+				}
+			}
+            &.slider__slides--3 {
+                .splide__arrows {
+				  @media screen and (min-width: 768px) { display: none; }
+                }
+            }
+			.splide-wrapper {
+				.splide__arrows { padding: 0 20px; display: none;
+					.splide__arrow {
+						&--prev { transform: initial; }
+						&--next { transform: initial; }
+					}
+				}
+			}
+			.splide__slide { border-radius: 1px; }
+		}
+	}
+
+
+	/* === Card Overwrites === */
+	.card {
+		height: 100%;
+
+		.card__media { height: 327px;
+			@media screen and (min-width:768px) { height: 230px; }
+			@media screen and (min-width:1280px) { height: 332px; }
+			@media screen and (min-width:1920px) { height: 480px; }
+		}
+	}
+
+
+	&--tall {
+		.splide__arrows {
+			@media screen and (min-width: 1920px) { top: 306px !important; }
+		}
+		.card {
+			.card__media { height: 386px;
+				@media screen and (min-width:768px) { height: 332px; }
+				@media screen and (min-width:1920px) { height: 640px; }
+			}
+		}
+	}
+
+	&--col4 {
+		.slider__container {
+			@media screen and (min-width:768px) {  }
+			@media screen and (min-width:1920px) { padding: 0 48px; }
+		}
+
+        .slider__slides--4 {
+            .splide__arrows {
+                @media screen and (min-width:1920px) { display: none; }
+            }
+        }
+
+		.splide__arrows {
+			@media screen and (min-width:1920px) { top: 306px; }
+			.splide__arrow {
+				@media screen and (min-width:1920px) {
+					.v-icon__svg { width: 28.5px !important; }
+				}
+			}
+		}
+	}
+
+}

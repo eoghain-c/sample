@@ -1,0 +1,99 @@
+/*
+   Breadcrumbs
+*/
+
+@import '../../../common/sass/core';
+
+.breadcrumbs {
+	background: $color-white;
+	border-top: 1px solid $color-green;
+	padding: 8px 50px 9px;
+	position: relative;
+	width: 100%;
+	z-index: 10;
+
+	@media screen and (min-width: 768px) {
+		padding: 8px 38px 9px;
+	}
+	@media screen and (min-width: 1280px) {
+		padding: 8px 50px 9px;
+	}
+	@media screen and (min-width: 1920px) {
+		padding: 8px 80px 9px;
+	}
+
+	&__inner {
+		max-width: $site-max-width;
+	}
+
+	&__list,
+	&__item,
+	&__link {
+		display: flex;
+	}
+
+	&__list {
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		align-items: center;
+		color: $color-black;
+		list-style: none;
+
+		&:after {
+			content: '>';
+			font-size: 11px;
+			font-weight: 500;
+			margin: 0 8px 2px;
+
+			@media screen and (min-width: 768px) {
+				font-size: 12px;
+				margin: 0 9px 4px;
+			}
+			@media screen and (min-width: 1280px) {
+				font-size: 14px;
+				margin: 0 10px 5px;
+			}
+		}
+
+		&:last-of-type:after {
+			display: none;
+		}
+	}
+
+	&__link {
+		@include nexa;
+		align-items: center;
+		color: $color-black;
+		display: flex;
+		font-size: 10px;
+		letter-spacing: 0.02em;
+		line-height: 140%;
+		padding: 4px 0;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: color 0.2s ease-in-out;
+
+		@media screen and (min-width: 768px) {
+			font-size: 12px;
+		}
+		@media screen and (min-width: 1280px) {
+			font-size: 14px;
+		}
+
+		&:hover,
+		&:focus {
+			color: $color-green;
+			text-decoration: underline;
+		}
+
+		&--current {
+			color: $color-black;
+			cursor: default;
+			pointer-events: none;
+		}
+	}
+}

@@ -1,0 +1,94 @@
+@import '../../../common/sass/core';
+
+/* Section Spacer
+   -------------------------------------------------------------------------- */
+.section-spacer {
+	// using --<top/bottom>-full as the default
+	margin: $margin-0 0;
+	position: relative;
+
+	@media screen and (min-width: 1280px) {
+		margin: $margin-1280 0;
+	}
+	@media screen and (min-width: 1920px) {
+		margin: $margin-1920 0;
+	}
+
+	&--top-large {
+		margin-top: calc(#{$margin-0} + (#{$margin-0} / 2));
+
+		@media screen and (min-width: 1280px) {
+			margin-top: calc(#{$margin-1280} + (#{$margin-1280} / 2));
+		}
+		@media screen and (min-width: 1920px) {
+			margin-top: calc(#{$margin-1920} + (#{$margin-1920} / 2));
+		}
+	}
+
+	&--top-half {
+		margin-top: calc(#{$margin-0} / 2);
+
+		@media screen and (min-width: 1280px) {
+			margin-top: calc(#{$margin-1280} / 2);
+		}
+		@media screen and (min-width: 1920px) {
+			margin-top: calc(#{$margin-1920} / 2);
+		}
+	}
+
+	&--top-none {
+		margin-top: 0;
+	}
+
+	&--bottom-large {
+		margin-bottom: calc(#{$margin-0} + (#{$margin-0} / 2));
+
+		@media screen and (min-width: 1280px) {
+			margin-bottom: calc(#{$margin-1280} + (#{$margin-1280} / 2));
+		}
+		@media screen and (min-width: 1920px) {
+			margin-bottom: calc(#{$margin-1920} + (#{$margin-1920} / 2));
+		}
+	}
+
+	&--bottom-half {
+		margin-bottom: calc(#{$margin-0} / 2);
+
+		@media screen and (min-width: 1280px) {
+			margin-bottom: calc(#{$margin-1280} / 2);
+		}
+		@media screen and (min-width: 1920px) {
+			margin-bottom: calc(#{$margin-1920} / 2);
+		}
+	}
+
+	&--bottom-none {
+		margin-bottom: 0;
+	}
+}
+
+
+/* Page Backgrounds
+-------------------------------------------------------------------------- */
+#main-content {
+	&.page-background {
+		background-repeat: no-repeat;
+		overflow: hidden;
+	}
+}
+
+
+/* Section Backgrounds
+   -------------------------------------------------------------------------- */
+section.background {
+  overflow: hidden;
+
+  // Background Gradients -----
+  &.background-gradient--fade-up {
+	background: linear-gradient(180deg, rgba($color-blue-light, 0) 0%, rgba($color-blue-light, 0.3) 38.62%);
+  }
+
+  &.background-gradient--fade-down {
+	background: linear-gradient(0deg, rgba($color-blue-light, 0) 0%, rgba($color-blue-light, 0.3) 38.62%);
+  }
+}

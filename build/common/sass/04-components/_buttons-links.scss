@@ -1,0 +1,156 @@
+/*
+   Button and link component styles
+*/
+
+
+/* Links wrapper class.  To provide even spacing between links when they switch
+   from horizontal to vertical.
+   -------------------------------------------------------------------------- */
+// Todo: modify .links margin if necessary
+.links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0 -10px -16px; // -16 to remove bottom margin from .link
+
+	.link {
+		margin: 0 10px 16px;
+	}
+}
+
+
+/* Link styles
+   Usage:
+      Text Link -> link link--{modifier}
+
+      Primary button link -> link link__btn link__btn--{modifier}
+      Secondary button link -> link link__btn link__btn--secondary link__btn--{modifier}
+   -------------------------------------------------------------------------- */
+// Todo: Add complete link styles
+.link,
+.wysiwyg .link {
+	@include transition();
+	@include nexa-bold;
+	color: $color-green;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 12px;
+	letter-spacing: 0.15em;
+	line-height: 15px;
+	position: relative;
+	text-transform: uppercase;
+
+	@media screen and (min-width: 1280px) {
+		font-size: 14px;
+		letter-spacing: 0.1em;
+		line-height: 100%;
+	}
+
+	&.active, &:hover, &:focus {
+		color: $color-green;
+		text-decoration: none;
+	}
+
+	&__btn {
+		@include transition();
+		background: $color-white;
+		border: 1px solid $color-grey;
+		border-radius: 2px;
+		color: $color-green;
+		font-size: 12px;
+		letter-spacing: 0.15em;
+		line-height: 15px;
+		padding: 11px 22px;
+
+		@media screen and (min-width: 1280px) {
+			font-size: 14px;
+			line-height: 100%;
+			padding: 14px 28px;
+		}
+
+		&:after {
+			display: none;
+		}
+
+		&.active, &:hover, &:focus {
+			background: $color-green;
+			border: 1px solid $color-green;
+			color: $color-white;
+			text-decoration: none;
+		}
+
+		&--green {
+			background: $color-green;
+			border: 1px solid $color-green;
+			color: $color-white;
+
+			&.active, &:hover, &:focus {
+				background: $color-white;
+				border: 1px solid $color-grey;
+				color: $color-green;
+			}
+		}
+	}
+
+	&__text {
+	  span {
+		@include transition();
+		display: block;
+		padding: 5px 0;
+
+		&:after {
+		  @include transition();
+		  background: $color-green;
+		  bottom: 0;
+		  content: "";
+		  display: block;
+		  height: 1px;
+		  left: 0;
+		  margin: 0 auto;
+		  position: absolute;
+		  right: 0;
+		}
+	  }
+
+	  &.active, &:hover, &:focus {
+		span {
+		  transform: scale(0.85);
+		  text-decoration: none;
+		}
+	  }
+	}
+	&__text--no-line {
+	  span {
+		@include transition();
+		display: block;
+		padding: 5px 0;
+	  }
+
+	  &.active, &:hover, &:focus {
+		span {
+		  transform: scale(0.85);
+		  text-decoration: none;
+		}
+	  }
+	}
+
+  &__with-icon {
+	span {
+	  .v-icon__svg {
+		color: $color-green;
+		height: 14px;
+		margin: 0 11px 4px 0;
+		width: 14px;
+
+		@media screen and (min-width: 1280px) {
+		  height: 17px;
+		  width: 17px;
+		}
+	  }
+
+	  &:after {
+		display: none;
+	  }
+	}
+  }
+}

@@ -1,0 +1,10 @@
+/* Reposition Nested Pages buttons on page listings
+   -------------------------------------------------------------------------- */
+.nestedpages .action-buttons {
+	position: relative;
+	margin-left: 20px;
+}
+
+.nestedpages .row:hover .action-buttons {
+	display: inline-block;
+}

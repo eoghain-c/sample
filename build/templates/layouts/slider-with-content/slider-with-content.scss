@@ -1,0 +1,568 @@
+@import '../../../common/sass/core';
+
+.swc{
+  $layout: &;
+  &__inner{
+	#{$layout}__position{
+	  display:flex;
+	  &--left-bottom{
+		flex-direction: column-reverse;
+		@media screen and (min-width:768px) {
+		  flex-direction: row;
+		}
+		.swc__content-container{
+		  @media screen and (min-width:768px) {
+			align-items: flex-start !important;
+			padding-top:46px;
+		  }
+		  @media screen and (min-width:1920px) {
+			align-items: flex-start !important;
+			padding-top:128px;
+		  }
+		}
+		.content{
+		  padding:33px 38px 40px 36px;
+		  @media screen and (min-width:768px) {
+			height:100%;
+			padding:53px 38px 0;
+		  }
+		  @media screen and (min-width:1920px) {
+			padding: 130px 95px 0 156px;
+		  }
+		  .wysiwyg{
+			.title{
+			  letter-spacing: -0.03em;
+			  @media screen and (min-width:768px) {
+				letter-spacing: -.01em;
+			  }
+			  @media screen and (min-width:1920px) {
+				padding-right:65px;
+			  }
+			}
+		  }
+		  .content__links{
+			padding-top:24px;
+			.link__btn{
+			  padding:13px 18px 13px 20px;
+			  @media screen and (min-width:768px) {
+				padding:13px 15px 13px 20px;
+			  }
+			  @media screen and (min-width:1280px) {
+
+			  }
+			  @media screen and (min-width:1920px) {
+
+			  }
+			}
+		  }
+		}
+		#{$layout}__content-container{
+		  width:100vw;
+		  @media screen and (min-width:768px) {
+			width:calc(100vw - 60.8vw);
+		  }
+		  @media screen and (min-width:1280px) {
+			width:calc(100vw - 67vw);
+		  }
+		  @media screen and (min-width:1920px) {
+			width:calc(100vw - 65vw);
+		  }
+		}
+		#{$layout}__slider-container{
+		  height:100%;
+		  width:100vw;
+		  @media screen and (min-width:768px) {
+			width:60.8vw;
+		  }
+		  @media screen and (min-width:1280px) {
+			width:67vw;
+		  }
+		  @media screen and (min-width:1920px) {
+			width:65vw;
+		  }
+		}
+	  }
+	  &--left-top{
+		flex-direction: column;
+		@media screen and (min-width:768px) {
+		  flex-direction: row;
+		}
+		.swc__content-container {
+		  .content{
+			padding:33px 38px 40px 38px;
+			@media screen and (min-width:768px) {
+			  height:100%;
+			  padding:53px 38px 0;
+			}
+			@media screen and (min-width:1920px) {
+			  padding: 130px 95px 0 155px;
+			}
+			.wysiwyg{
+			  .title{
+				letter-spacing: -0.023em;
+				max-width:65%;
+				@media screen and (min-width:768px) {
+				  letter-spacing: -.01em;
+				  max-width: 90%;
+				}
+				@media screen and (min-width:768px) {
+				  letter-spacing: -0.005em;
+				  max-width: 85%;
+				}
+			  }
+			}
+			.content__links{
+			  padding-top:24px;
+			  @media screen and (min-width:768px) {
+
+			  }
+			  @media screen and (min-width:1280px) {
+
+			  }
+			  @media screen and (min-width:1920px) {
+				padding-top:47px;
+			  }
+			  .link__btn{
+				padding:13px 18px 13px 20px;
+				@media screen and (min-width:768px) {
+				  padding:13px 15px 13px 20px;
+				}
+				@media screen and (min-width:1280px) {
+
+				}
+				@media screen and (min-width:1920px) {
+				  padding:12px 28px;
+				}
+			  }
+			}
+		  }
+		}
+		#{$layout}__content-container{
+		  width:100vw;
+		  @media screen and (min-width:768px) {
+			width:calc(100vw - 60.8vw);
+		  }
+		  @media screen and (min-width:1280px) {
+			width:calc(100vw - 67vw);
+		  }
+		  @media screen and (min-width:1920px) {
+			width:calc(100vw - 65vw);
+		  }
+		}
+		#{$layout}__slider-container{
+		  height:100%;
+		  width:100vw;
+		  @media screen and (min-width:768px) {
+			width:60.8vw;
+		  }
+		  @media screen and (min-width:1280px) {
+			width:67vw;
+		  }
+		  @media screen and (min-width:1920px) {
+			width:65vw;
+		  }
+		}
+	  }
+	  &--right-bottom{
+		flex-direction: column-reverse;
+		@media screen and (min-width:768px) {
+		  flex-direction: row-reverse;
+		}
+		.content{
+		  padding:33px 38px 40px 36px;
+		  @media screen and (min-width:768px) {
+			padding:7px 38px 0;
+		  }
+		  @media screen and (min-width:1920px) {
+			padding:8px 16px 0 96px;
+		  }
+		  .wysiwyg{
+			.title{
+			  letter-spacing: -0.03em;
+			}
+		  }
+		}
+		#{$layout}__content-container{
+		  width:100vw;
+		  @media screen and (min-width:768px) {
+			width:calc(100vw - 60.8vw);
+		  }
+		  @media screen and (min-width:1280px) {
+			width:calc(100vw - 67vw);
+		  }
+		  @media screen and (min-width:1920px) {
+			width:calc(100vw - 73vw);
+		  }
+		}
+		#{$layout}__slider-container{
+		  height:100%;
+		  width:100vw;
+		  @media screen and (min-width:768px) {
+			width:60.8vw;
+		  }
+		  @media screen and (min-width:1280px) {
+			width:67vw;
+		  }
+		  @media screen and (min-width:1920px) {
+			width:73vw;
+		  }
+		}
+	  }
+	  &--right-top{
+		flex-direction: column;
+		@media screen and (min-width:768px) {
+		  flex-direction: row-reverse;
+		}
+		.content{
+		  padding:33px 38px 40px 38px;
+		  @media screen and (min-width:768px) {
+			padding:7px 38px 0;
+		  }
+		  @media screen and (min-width:1920px) {
+			padding:8px 16px 0 95px;
+		  }
+		  .wysiwyg{
+			.title{
+			  letter-spacing: -0.023em;
+			}
+		  }
+		  .content__links{
+			padding-top:24px;
+			.link__btn{
+			  padding:13px 18px 13px 20px;
+			}
+		  }
+		}
+		#{$layout}__content-container{
+		  width:100vw;
+		  @media screen and (min-width:768px) {
+			width:calc(100vw - 60.8vw);
+		  }
+		  @media screen and (min-width:1280px) {
+			width:calc(100vw - 67vw);
+		  }
+		  @media screen and (min-width:1920px) {
+			width:calc(100vw - 73vw);
+		  }
+		}
+		#{$layout}__slider-container{
+		  height:100%;
+		  width:100vw;
+		  @media screen and (min-width:768px) {
+			width:60.8vw;
+		  }
+		  @media screen and (min-width:1280px) {
+			width:67vw;
+		  }
+		  @media screen and (min-width:1920px) {
+			width:73vw;
+		  }
+		}
+	  }
+	  #{$layout}__content-container{
+		//width:100vw;
+		@media screen and (min-width:768px) {
+		  display:flex;
+		  align-items: center;
+		  //width:calc(100vw - 60.8vw);
+		}
+		@media screen and (min-width:1280px) {
+		  //width:calc(100vw - 67vw);
+		}
+		@media screen and (min-width:1920px) {
+		  //width:calc(100vw - 65vw);
+		}
+		.content{
+		  .wysiwyg{
+			.title{
+			  font-size:28px;
+			  line-height: 28px;
+			  margin-bottom:22px;
+			  @media screen and (min-width:768px) {
+				font-size:30px;
+				line-height: 30px;
+				margin-bottom:21px;
+			  }
+			  @media screen and (min-width:1280px) {
+				font-size:40px;
+				line-height: 40px;
+			  }
+			  @media screen and (min-width:1920px) {
+				font-size:50px;
+				letter-spacing: normal;
+				line-height: 50px;
+				margin-bottom:43px;
+			  }
+			}
+			p {
+			  &:not([class]){
+				color: $color-grey-dark;
+				font-size:11px;
+				letter-spacing: 0.02em;
+				line-height:22px;
+				@media screen and (min-width:768px) {
+				  font-size:12px;
+				  line-height:24px;
+				}
+				@media screen and (min-width:1280px) {
+				  font-size:14px;
+				  line-height:28px;
+				}
+				@media screen and (min-width:1920px) {
+				  font-size:16px;
+				  line-height:32px;
+				}
+			  }
+			}
+		  }
+		  &__links{
+			padding-top:22px;
+			@media screen and (min-width:1920px) {
+			  gap: 21px;
+			  padding-top: 49px;
+			}
+			.link{
+			  @media screen and (min-width:768px) {
+				margin-bottom: 20px;
+			  }
+			}
+			.link__btn{
+			  font-size:10px;
+			  letter-spacing:0.15em;
+			  line-height:13px;
+			  padding: 14px 19px;
+			  @media screen and (min-width:768px) {
+				font-size:12px;
+				line-height:15px;
+				padding: 15px 15px 14px 19px;
+			  }
+			  @media screen and (min-width:1280px) {
+				font-size: 13px;
+				line-height: 16px;
+				padding: 12px 28px;
+			  }
+			  @media screen and (min-width:1920px) {
+				font-size:14px;
+				line-height:normal;
+			  }
+			}
+			.link__text{
+			  font-size:10px;
+			  letter-spacing:0.15em;
+			  line-height:13px;
+			  @media screen and (min-width:768px) {
+				font-size:12px;
+				line-height:15px;
+			  }
+			  @media screen and (min-width:1280px) {
+				font-size: 13px;
+				line-height: 16px;
+			  }
+			  @media screen and (min-width:1920px) {
+				font-size:14px;
+				letter-spacing: 0.09em;
+				line-height:normal;
+			  }
+			  span:after{
+				@media screen and (min-width:1920px) {
+				  bottom:5px;
+				}
+			  }
+			}
+		  }
+		}
+	  }
+	  #{$layout}__slider-container{
+		//height:100%;
+		//width:100vw;
+		//@media screen and (min-width:768px) {
+		//  width:60.8vw;
+		//}
+		//@media screen and (min-width:1280px) {
+		//  width:67vw;
+		//}
+		//@media screen and (min-width:1920px) {
+		//  width:65vw;
+		//}
+		.splide-wrapper{
+		  .media__picture{
+			border-radius:2px;
+		  }
+		  .splide__arrows{
+			padding:24px 8px 24px 4px;
+			@media screen and (min-width:768px) {
+			  padding:24px 8px 24px 25px;
+			  top:52.25%
+			}
+		  }
+		}
+
+		&--card-single, &--card-double {
+		  .card--courses {
+			.wysiwyg {
+			  & > p:not(.card-title) {
+				display: none;
+			  }
+			}
+		  }
+		}
+
+		&--card-single, &--card-double, &--custom-single-card, &--custom-double-card {
+		  height:595px;
+		  @media screen and (min-width:768px) {
+			height:588px;
+		  }
+		  @media screen and (min-width:1280px) {
+			height:851px;
+		  }
+		  .splide-wrapper{
+			.splide__arrows{
+			  justify-content: flex-end;
+			  top:33.75%;
+			  @media screen and (min-width:768px) {
+				top:35.5%;
+			  }
+			  @media screen and (min-width:1920px) {
+				top:38%;
+			  }
+
+			}
+			.splide__slide{
+			  .card{
+				.card__media{
+				  height:403px;
+				  @media screen and (min-width:768px) {
+					height:418px;
+				  }
+				  @media screen and (min-width:1280px) {
+					height:535px;
+				  }
+				  @media screen and (min-width:1920px) {
+					height:650px;
+				  }
+				}
+				&__content{
+				  padding:29px 16px 26px 13px;
+				  @media screen and (min-width:768px) {
+					padding:19px 12px 19px 0;
+				  }
+				  @media screen and (min-width:1280px) {
+					padding:28px 0;
+				  }
+				  .content{
+					padding:0;
+				  }
+				  .wysiwyg{
+					.title{
+					  font-size:22px;
+					  line-height: 22px;
+					  margin-bottom:18px;
+					  @media screen and (min-width:768px) {
+						font-size: 24px;
+						line-height: 25px;
+						margin-bottom:8px;
+					  }
+					  @media screen and (min-width:1280px) {
+						font-size:36px;
+						line-height: 44px;
+						margin-bottom:14px;
+					  }
+					}
+					p {
+					  &:not([class]){
+						letter-spacing:0.02em;
+						@media screen and (min-width:768px) {
+						  font-size:12px;
+						  line-height: 24px;
+						}
+						@media screen and (min-width:1280px) {
+						  font-size:14px;
+						  line-height: 28px;
+						}
+						@media screen and (min-width:1920px) {
+						  font-size:16px;
+						  line-height: 32px;
+						}
+					  }
+					}
+				  }
+				  .wysiwyg+.links{
+					margin-top:25px;
+					.link{
+					  @media screen and (min-width:768px) and (max-width: 1279px) {
+					    margin: 0 7px 0 11px;
+					  }
+					}
+				  }
+				}
+			  }
+
+			}
+		  }
+		}
+		&--custom-single, &--custom-double{
+		  height:403px;
+		  @media screen and (min-width:768px) {
+			height:517px;
+		  }
+		  @media screen and (min-width:1280px) {
+			height:600px;
+		  }
+		  @media screen and (min-width:1920px) {
+			height:750px;
+		  }
+		}
+		&--card-single, &--custom-single-card, &--custom-single{
+		  .splide-wrapper{
+			.splide__arrows{
+			  justify-content: flex-start;
+			  @media screen and (min-width:1280px) {
+				padding-left:138px;
+			  }
+			  @media screen and (min-width:1920px) {
+				padding-left:284px;
+				top:50%;
+			  }
+			  .splide__arrow--next{
+				display:none;
+			  }
+			}
+		  }
+		}
+		&--card-double, &--custom-double-card, &--custom-double{
+		  .splide-wrapper{
+			.splide__arrows{
+			  justify-content: flex-end;
+			  @media screen and (min-width:768px) {
+				padding-right:141px;
+			  }
+			  @media screen and (min-width:1920px) {
+				padding-right:215px;
+			  }
+			  .splide__arrow--prev{
+				  display:none;
+			  }
+			  .splide__arrow--next{
+				@media screen and (min-width:768px) {
+				  display:block;
+				}
+			  }
+			}
+		  }
+		}
+		&--custom-single {
+		  .splide__slide:not(.is-active){
+			@media screen and (min-width:768px) {
+			  height:calc(100% - 57px);
+			  margin-top:40px;
+			}
+			@media screen and (min-width:1280px) {
+			  height:calc(100% - 120px);
+			  margin-top:58px;
+			}
+		  }
+		}
+	  }
+	}
+  }
+}

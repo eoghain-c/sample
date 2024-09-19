@@ -1,0 +1,79 @@
+{
+    "key": "group_64e37dc2c1dae",
+    "title": "Clone: Icon",
+    "fields": [
+        {
+            "key": "field_64e37dc1b3713",
+            "label": "Icon",
+            "name": "icon",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "amenity-ac": "Air Conditioning",
+                "amenity-bed": "Bed",
+                "amenity-bedsheets": "Bed Sheets",
+                "amenity-clean": "Maid Service",
+                "amenity-clock": "Clock",
+                "amenity-clock-2": "Clock 2",
+                "amenity-coffee": "Coffee",
+                "amenity-destination": "Location",
+                "amenity-dining": "Dining",
+                "amenity-flower": "Flower",
+                "amenity-golf": "Golf",
+                "amenity-hairdryer": "Hair Dryer",
+                "amenity-hvac": "HVAC",
+                "amenity-ice": "Ice",
+                "amenity-iron": "Iron",
+                "amenity-kitchen": "Kitchen",
+                "amenity-lock": "Safe",
+                "amenity-newspaper": "Newspaper",
+                "amenity-plane": "Plane",
+                "amenity-robes": "Robes",
+                "amenity-room-service": "Room Service",
+                "amenity-sofa-bed": "Sofa Bed",
+                "amenity-star": "Star",
+                "amenity-toiletries": "Toiletries",
+                "amenity-turndown": "Turndown",
+                "amenity-tv": "TV",
+                "amenity-usb": "USB",
+                "amenity-vanity": "Vanity Mirror",
+                "amenity-wifi": "Wi-Fi"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1699969825
+}

@@ -1,0 +1,429 @@
+{
+    "key": "group_64fb4b06e7ed3",
+    "title": "Layout: Slider With Content",
+    "fields": [
+        {
+            "key": "field_64fb4b06ec1f4",
+            "label": "Layout Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_64fb4b06ec27b",
+            "label": "Content",
+            "name": "content",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_6033e4737cecc"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_64fb5b4f5d2e2",
+            "label": "Card Slider",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "card-single"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "card-double"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_64fb50b1e3501",
+            "label": "Card Slides",
+            "name": "card_slides",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "card-single"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "card-double"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "accommodations",
+                "venues",
+                "shops",
+                "restaurants",
+                "offers",
+                "courses",
+                "activities"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "return_format": "object",
+            "min": 3,
+            "max": "",
+            "elements": ""
+        },
+        {
+            "key": "field_64fb5b745d2e4",
+            "label": "Custom Slider",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "custom-single"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "custom-double"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "custom-single-card"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "custom-double-card"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_64ff463e52f3a",
+            "label": "Custom Slides",
+            "name": "custom_slides",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "custom-single"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "custom-double"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_651eab26f566e",
+            "label": "Custom Cards",
+            "name": "custom_cards",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "custom-single-card"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64fb4ce77fd13",
+                        "operator": "==",
+                        "value": "custom-double-card"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_651eab3ff566f",
+                    "label": "Custom Card",
+                    "name": "custom_card",
+                    "aria-label": "",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_64f885e37f63a"
+                    ],
+                    "display": "group",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0,
+                    "parent_repeater": "field_651eab26f566e"
+                }
+            ]
+        },
+        {
+            "key": "field_64fb4b06ec2f0",
+            "label": "Layout Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_64fb4ce77fd13",
+            "label": "Slider Type",
+            "name": "slider_type",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "<p>Please select the intended slider usage<\/p>\r\n<p>Single or Double?<br>\r\nThis option determines the number of images revealed on the highest breakpoint.<br>\r\n If you would like a single image revealed select the single option, if you would like 2 images revealed within the slider select the double option.<\/p>\r\n\r\n<p>Card or Custom?<br>\r\nSelect the Card option if you would like to utilize a specific post type for the images within your slider. Select custom if you would like to build your slider with custom images.<\/p>",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "card-single": "Card - Single Image",
+                "card-double": "Card - Double Image",
+                "custom-single-card": "Card - Custom Single",
+                "custom-double-card": "Card - Custom Double",
+                "custom-single": "Custom Single Image",
+                "custom-double": "Custom Double Image"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_64ff43e71a8e1",
+            "label": "Content Location",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Please select the desired location of the content to the slider.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_64fb52f17253f",
+            "label": "Content Location - Desktop",
+            "name": "content_location_desktop",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "right": "Right"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_64ff441d1a8e2",
+            "label": "Content Location - Mobile",
+            "name": "content_location_mobile",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top": "Top",
+                "bottom": "Bottom"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_64fb4b06ec364",
+            "label": "Layout Settings",
+            "name": "layout_settings",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_615b129882eb0"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1697815555
+}

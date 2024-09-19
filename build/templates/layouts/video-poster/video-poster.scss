@@ -1,0 +1,41 @@
+@import '../../../common/sass/core';
+
+.video-poster {
+	$layout: &;
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+
+	&--medium {
+		max-width: 1280px;
+
+		.video-poster__media-content{
+			iframe {
+				height: 78vh;
+				max-height: 760px;
+			}
+		}
+	}
+
+	&--small {
+		max-width: 768px;
+
+		.video-poster__media-content{
+			iframe {
+				height: 50vh;
+				max-height: 494px;
+			}
+		}
+	}
+
+	&--fullscreen {
+		max-width: $site-max-width;
+
+		.video-poster__media-content{
+			iframe {
+				height: 100vh;
+				max-height: 1280px;
+			}
+		}
+	}
+}

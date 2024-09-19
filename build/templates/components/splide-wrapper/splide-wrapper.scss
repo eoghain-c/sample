@@ -1,0 +1,136 @@
+@import '../../../common/sass/core';
+
+/* Component: Splide Wrapper
+   -------------------------------------------------------------------------- */
+
+.splide-wrapper {
+	height: 100%;
+
+	&__splide, &__track {
+		height: 100%;
+	}
+
+	.splide {
+		// Arrows -----
+		&__arrows {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+			padding: 24px 34px;
+			pointer-events: none;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			z-index: 2;
+
+			@media screen and (min-width: 1920px) {
+				padding: 30px 42px;
+			}
+
+			.splide__arrow {
+				@include button-reset;
+				background: $color-grey-light;
+				border-radius: 50%;
+				color: $color-green;
+				height: 50px;
+				opacity: 1;
+				pointer-events: auto;
+				position: relative;
+				transition: opacity 0.25s ease-in-out, background-color 0.35s ease-in-out, color 0.25s ease-in-out;
+				width: 50px;
+
+				@media screen and (min-width: 1920px) {
+					height: 70px;
+					width: 70px;
+				}
+
+				.v-icon__svg {
+					display: block;
+					height: 30px;
+					left: 50%;
+					pointer-events: none;
+					position: absolute;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					width: 30px;
+
+					@media screen and (min-width: 1920px) {
+						height: 50px;
+						width: 50px;
+					}
+				}
+
+				&:hover, &:focus {
+					background: $color-blue-light!important;
+					color: $color-white;
+				}
+
+				&--prev {
+					transform: rotate(180deg);
+				}
+
+				&:disabled {
+					opacity: 0.5;
+					pointer-events: none;
+				}
+
+				/* Arrow Variations */
+				&--transparent {
+					background: transparent;
+					color: $color-green;
+
+					&:hover, &:focus {
+						background: transparent;
+						color: $color-black;
+					}
+				}
+			}
+		}
+
+		// Pagination -----
+		&__pagination {
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+
+			&__page {
+				@include button-reset;
+				border-radius: 50%;
+				display: block;
+				height: 10px;
+				margin: 0 10px;
+				padding: 2px;
+				transition: $transition-base;
+				width: 10px;
+
+				&:after {
+					background: $color-grey-medium;
+					border-radius: 50%;
+					content: '';
+					display: block;
+					height: 6px;
+					transition: $transition-base;
+					width: 6px;
+				}
+
+				&:hover, &:focus {
+					&:after {
+						background: $color-green;
+					}
+				}
+
+				&.is-active {
+					border-radius: 10px;
+					width: 54px;
+
+					&:after {
+						background: $color-green;
+						border-radius: 6px;
+						width: 50px;
+					}
+				}
+			}
+		}
+	}
+}

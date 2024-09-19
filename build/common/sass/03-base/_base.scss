@@ -1,0 +1,147 @@
+/**
+	Base styles
+*/
+
+
+body {
+	@include nexa;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+
+	//Fix font bolding issue on mac
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.site-wrap {
+	max-width: $site-max-width;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: $color-grey-light;
+}
+
+.no-hero {
+  #main-content {
+	padding-top: var(--header-height);
+  }
+}
+
+.after-hero--g {
+  position: relative;
+
+  &:before {
+	background: url('/content/themes/base/assets/img/icons/g.svg');
+	content: "";
+	display: block;
+	filter: $filter-green;
+	height: 401px;
+	left: 50%;
+	opacity: 0.03;
+	position: absolute;
+	top: 24px;
+	transform: translateX(-50%);
+	width: 358px;
+
+	@media screen and (min-width: 768px) {
+	  height: 401px;
+	  top: 46px;
+	  width: 358px;
+	}
+	@media screen and (min-width: 1920px) {
+	  height: 562px;
+	  top: 0;
+	  width: 501px;
+
+	}
+  }
+}
+
+/* Lazyloaded to transition opacity into view
+   -------------------------------------------------------------------------- */
+img[data-src]{
+	@include transition();
+	opacity: 0;
+}
+img.lazyloaded {
+	opacity: 1;
+}
+
+
+/* Use on a container div to remove top/bottom spacing from first/last
+   element.  This functionality still exists in .wysiwyg class.
+   -------------------------------------------------------------------------- */
+.clear-margins {
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+// Todo: Update these as necessary
+/* Bottom spacing for most layouts
+   -------------------------------------------------------------------------- */
+.bottom-spacing {
+	padding-bottom: 48px;
+
+	@include media-breakpoint-up(lg) {
+		padding-bottom: 56px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		padding-bottom: 64px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		padding-bottom: 96px;
+	}
+}
+
+
+// Todo: Update these as necessary
+/* Optional top spacing for most layouts
+   -------------------------------------------------------------------------- */
+.top-spacing {
+	padding-top: 48px;
+
+	@include media-breakpoint-up(lg) {
+		padding-top: 56px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		padding-top: 64px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		padding-top: 96px;
+	}
+}
+
+
+// Todo: Update these as necessary
+/* Optional side spacing for most layouts
+   -------------------------------------------------------------------------- */
+.side-spacing {
+	padding-left: 24px;
+	padding-right: 24px;
+
+	@include media-breakpoint-up(md) {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding-left: 48px;
+		padding-right: 48px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		padding-left: 64px;
+		padding-right: 64px;
+	}
+}
